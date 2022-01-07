@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  <meta charset="UTF-8">
+  <title>Simple Machines</title>
+  <link rel="icon" href="/assets/favicon.ico">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/basicPage.css">
+  <link rel="stylesheet" href="/css/singleGameView.css">
+
+
+  <script src="js/game.js" defer></script>
+  <script src="js/accordion.js" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '387795396444479');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=387795396444479&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+</head>
+<body>
+<div class="stickyHeader">
+  <header>
+    <div class="headerContents">
+      <div sec:authorize="!isAuthenticated()" class="topNav">
+        <ul class="mainNav">
+          <li class="topNavItem"><a href="/donate">Donate</a></li>
+          <li class="topNavItem"><a href="/login">Log In</a></li>
+          <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+        </ul>
+      </div>
+      <div sec:authorize="isAuthenticated()" class="topNav">
+        <ul class="mainNav">
+          <li class="topNavItem">
+            <form name='logout' th:action="@{/logout}" method='post'>
+              <button class="topNavItem" type="submit">Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+      <div class="logo">
+        <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+      </div>
+
+      <div class=""> </div>
+
+      <div class="mainNavContainer">
+        <ul class="mainNav">
+          <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
+          <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+          <li class="mainNavItem"><a href="/about-us">About Us</a></li>
+          <li class="mainNavItem active"><a href="/our-games">Our Games</a></li>
+          <li class="mainNavItem"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+          <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+        </ul>
+        <div class="logoWG">
+          <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+  <main>
+
+
+<section id="singleGameContainer">
+
+  <div class="singleGameContentContainer">
+    <div class="backNav"><a href="/our-games">Back to Games</a> </div>
+
+    <h1>Simple Machines</h1>
+
+    <div class="gameImageContainer">
+
+      <a href="http://edheads2.org/simplemachines/story.html" onclick="return openwindow('http://edheads2.org/simplemachines/story.html')">
+        <img src="/assets/simpleMachinesPlay.jpg" alt="Scene from the Simple Machines game with play button." class="gameImg">
+      </a>
+      <div class="sponsorTag">
+        <a href="/get-involved"> Sponsor This Game!</a>
+      </div>
+    </div>
+
+    <div class="singleGameContent">
+      <p class="pHead">Grades: 2-6</p>
+      <p>Search a robot’s house to find simple machines or his tool shed for compound machines!</p>
+    </div>
+
+<!--    <div class="sponsorContainer">-->
+<!--      <div class="sponsorContent"> LOGO WILL HERE</div>-->
+<!--    </div>-->
+
+
+    <div class="accordion">Glossary of Terms
+    </div>
+    <div class="accordionContent">
+      <p class="pHead">Compound Machine</p>
+      <p class="pText">Two or more simple machines working together to make work easier.<br>
+        Examples:Wheelbarrow, Can Opener, Bicycle</p>
+        <div class="term">
+            <div>
+      <p class="pHead">Gears</p>
+      <p class="pText">Two toothed wheels fit together either directly
+        or through a chain or belt so one wheel will turn the other.
+        Some gears may have a screw or a toothed shaft in place
+        of one of the wheels. A gear may also be a combination
+        of toothed wheels that produces a certain speed
+        (such as a bicycle's top gear which makes the bike go fast,
+        and the low gear for slow speed.) <br>
+        Examples:Clock, Automobile, Drill
+      </p>
+          </div>
+          <div>
+            <img src="/assets/glossary/gear.png" alt="gear" class="glossaryImg">
+          </div>
+        </div>
+
+
+      <div class="term">
+        <div>
+      <p class="pHead">Inclined plane</p>
+      <p class="pText">A sloping surface, such as a ramp.
+        An inclined plane can be used to alter the effort and distance involved
+        in doing work, such as lifting loads. The trade-off is that an object
+        must be moved a longer distance than if it was lifted straight up,
+        but less force is needed.<br>
+        Examples:Staircase, Ramp, Bottom of a Bath Tub
+      </p>
+        </div>
+        <div>
+          <img src="/assets/glossary/incline.png" alt="incline" class="glossaryImg">
+        </div>
+      </div>
+
+      <div class="term">
+        <div>
+      <p class="pHead">Lever</p>
+      <p class="pText">A straight rod or board that pivots on a point known
+        as a fulcrum. The fulcrum can be moved depending on the weight of
+        the object to be lifted or the force you wish to exert. Pushing
+        down on one end of a lever results in the upward motion of the opposite
+        end of the fulcrum.<br>
+        Examples:Door on Hinges, Seesaw, Hammer, Bottle Opener
+      </p>
+        </div>
+        <div>
+          <img src="/assets/glossary/lever.png" alt="lever" class="glossaryImg">
+        </div>
+      </div>
+
+
+      <div class="term">
+        <div>
+      <p class="pHead">Pulley</p>
+      <p class="pText">A wheel that usually has a groove around the outside edge.
+        This groove is for a rope or belt to move around the pulley.
+        Pulling down on the rope can lift an object attached to the rope.
+        Work is made easier because pulling down on the rope is made easier
+        due to gravity.<br>
+        Examples:Flag Pole, Crane, Mini-Blinds
+      </p>
+        </div>
+        <div>
+          <img src="/assets/glossary/pulley.png" alt="pulley" class="glossaryImg">
+        </div>
+      </div>
+
+      <div class="term">
+        <div>
+      <p class="pHead">Screw</p>
+      <p class="pText">An inclined plane wrapped around a shaft or cylinder.
+        This inclined plane allows the screw to move itself or to move an object or
+        material surrounding it when rotated.<br>
+        Examples:Bolt, Spiral Staircase
+      </p>
+        </div>
+        <div>
+          <img src="/assets/glossary/screw.png" alt="screw" class="glossaryImg">
+        </div>
+      </div>
+
+
+      <p class="pHead">Simple Machine</p>
+      <p class="pText">A machine with few or no moving parts. Simple machines make work easier. <br>
+        Examples:Screw, Wheel and Axle, Wedge, Pulley, Inclined Plane, Lever
+      </p>
+
+
+      <div class="term">
+        <div>
+      <p class="pHead">Wedge</p>
+      <p class="pText">Two inclined planes joined back to back. Wedges are used to split things.<br>
+        Examples:Axe, Zipper, Knife
+      </p>
+        </div>
+        <div>
+          <img src="/assets/glossary/wedge.png" alt="wedge" class="glossaryImg">
+        </div>
+      </div>
+
+      <div class="term">
+        <div>
+      <p class="pHead">Wheel and Axle</p>
+      <p class="pTextLast">A wheel and axle has a larger wheel (or wheels) connected by a smaller cylinder
+        (axle) and is fastened to the wheel so that they turn together. When the axle is turned,
+        the wheel moves a greater distance than the axle, but less force is needed to move it.
+        The axle moves a shorter distance, but it takes greater force to move it.<br>
+        Examples:Door Knob, Wagon, Toy Car
+      </p>
+        </div>
+        <div>
+          <img src="/assets/glossary/wheel-axle.png" alt="wheel and axle" class="glossaryImg">
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">Credits and Thanks
+    </div>
+    <div class="accordionContentTwoColumn">
+      <div class="accordionColumns">
+
+        <div class="columnLeft">
+          <p>Logo will go here</p>
+          <p class="pHead">Funding by Martha Holden <br> Jennings Foundation
+          </p>
+        </div>
+
+        <div class="columnRight">
+          <p class="pHead">Project Production and Development
+          </p>
+          <p class="accordionListTitle">Project Director: Gail Wheatley
+          <ul class="accordionList">
+            <li>Research</li>
+            <li>Project Organization</li>
+            <li>Grant Preparation</li>
+            <li>Activity Ideas & Concepts</li>
+          </ul>
+          </p>
+          <p class="accordionListTitle">Creative Director: Eric Bort
+          <ul class="accordionList">
+            <li>Activity, Web & Print Design</li>
+            <li>Programming</li>
+            <li>Script Writing</li>
+            <li>Voice and Audio</li>
+          </ul>
+          </p>
+          <p>Conceptual room designs: Steve Galgas</p>
+          <p>Science Editing: Steve Whitt</p>
+          <p>Text Editing: Heather Evans</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sideBar">
+    <!--        <div class="sideBarText">Sidebar Text</div>-->
+    <div class="sideBarAd">
+      <script src="//ap.lijit.com/www/delivery/fpi.js?z=331605&width=300&height=250"></script>
+      <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+    </div>
+
+    <div class="sideBarAd">
+      <script src="//ap.lijit.com/www/delivery/fpi.js?z=596345&width=300&height=250"></script>
+      <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+    </div>
+
+    <div sec:authorize="isAuthenticated()" class="buttonContainer">
+      <a href="/welcome">View Teacher Resources</a>
+    </div>
+
+  </div>
+
+</section>
+
+<footer-component></footer-component>
+</main>
+</body>
+</html>

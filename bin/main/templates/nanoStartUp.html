@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <meta charset="UTF-8">
+    <title>Nano Start Up</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/singleGameView.css">
+
+
+    <script src="js/game.js" defer></script>
+    <script src="js/accordion.js" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+<body>
+<div class="stickyHeader">
+    <header>
+        <div class="headerContents">
+            <div sec:authorize="!isAuthenticated()" class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem"><a href="/donate">Donate</a></li>
+                    <li class="topNavItem"><a href="/login">Log In</a></li>
+                    <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+                </ul>
+            </div>
+            <div sec:authorize="isAuthenticated()" class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem">
+                        <form name='logout' th:action="@{/logout}" method='post'>
+                            <button class="topNavItem" type="submit">Log Out</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+            </div>
+
+            <div class=""> </div>
+
+            <div class="mainNavContainer">
+                <ul class="mainNav">
+                    <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
+                    <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+                    <li class="mainNavItem"><a href="/about-us">About Us</a></li>
+                    <li class="mainNavItem active"><a href="/our-games">Our Games</a></li>
+                    <li class="mainNavItem"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+                    <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+                </ul>
+                <div class="logoWG">
+                    <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+    <main>
+
+
+<section id="singleGameContainer">
+
+    <div class="singleGameContentContainer">
+        <div class="backNav"><a href="/our-games">Back to Games</a> </div>
+
+        <h1>Nano Start Up</h1>
+
+        <div class="gameImageContainer">
+
+        <a href="http://www.edheads2.org/nano/Browser/Intro/Index.html" onclick="return openwindow('http://www.edheads2.org/nano/Browser/Intro/Index.html')">
+            <img src="/assets/nanoStartUpPlay.jpg" alt="Scene from the Nano Start Up game with play button." class="gameImg">
+        </a>
+            <div class="sponsorTag">
+                <a href="/get-involved"> Sponsor This Game!</a>
+            </div>
+        </div>
+
+        <div class="singleGameContent">
+            <p class="pHead">Grades: 5-8</p>
+            <p>Help Dr. Jessica Winter and her business partner Kristie
+                start a company for a new nanoparticle!</p>
+        </div>
+
+        <!--    <div class="sponsorContainer">-->
+        <!--      <div class="sponsorContent"> LOGO WILL HERE</div>-->
+        <!--    </div>-->
+
+
+        <div class="accordion">Glossary of Terms
+        </div>
+        <div class="accordionContent">
+            <p class="pHead">Angel Investors</p>
+            <p class="pText">Someone who provides financial support for
+                small new businesses or entrepreneurs. Angel investors are usually family and friends.</p>
+
+            <p class="pHead">Antibodies</p>
+            <p class="pText">Complex, Y-shaped protein molecules that target particular
+                cells or aspects of cells.
+            </p>
+
+            <p class="pHead">Biopsies</p>
+            <p class="pText">Samples of tissue sent to a lab so
+                a pathologist or other medical expert can examine them.
+            </p>
+
+            <p class="pHead">Budget</p>
+            <p class="pText">An estimate of income
+                and expenses for a particular period of time.
+            </p>
+
+            <p class="pHead">Competition</p>
+            <p class="pText">Any rivals striving for the same goal, such as in a
+                sporting event, or in business where rivals compete for the same customers or markets.
+            </p>
+
+            <p class="pHead">Cross Linkers</p>
+            <p class="pText">The ‘glue’ that holds things together at the
+                nanoparticle level. In this case, the cross linkers hold the antibodies on the
+                nanoparticles, or multi-dots.
+            </p>
+
+            <p class="pHead">Expenses</p>
+            <p class="pText">Goods or services a business must pay for.
+                The opposite of income.
+            </p>
+
+            <p class="pHead">Fundraising</p>
+            <p class="pText">The organized, thoughtful way of asking for
+                money for a particular event, business or charity.
+            </p>
+
+            <p class="pHead">Grants</p>
+            <p class="pText">The act of giving something. In this case,
+                the granting agency is giving money to support the start up business.
+                Grants typically do not have to be repaid, while loans and investors
+                usually do have to be repaid.
+            </p>
+
+            <p class="pHead">Income</p>
+            <p class="pText">Money generated by selling goods or services.
+                The opposite of expenses.
+            </p>
+
+            <p class="pHead">Market</p>
+            <p class="pText">The buyers and sellers of a particular good or
+                service in a particular area or industry. In this case, the ‘market’ for
+                Jessica’s invention was hospitals and doctors.
+            </p>
+
+            <p class="pHead">Marketing</p>
+            <p class="pText">Identifying and appealing to particular
+                consumers who might purchase your product. This includes advertising,
+                developing a brand, pricing and selling the product.
+            </p>
+
+            <p class="pHead">Milestones</p>
+            <p class="pText">An action or event marking
+                a particular stage of development or step toward the finished product.
+            </p>
+
+            <p class="pHead">Multi-dot</p>
+            <p class="pText">A nanoparticle or quantum dot with
+                certain specified properties. See ‘nanoparticle’ below.
+            </p>
+
+            <p class="pHead">Nanoengineer</p>
+            <p class="pText">An engineer that works with
+                nanoparticles (did you think it was a really tiny engineer?)
+            </p>
+
+            <p class="pHead">Nanolab</p>
+            <p class="pText">A lab in which the
+                engineering of nanoparticles takes place. This is often, but not always a clean room.
+            </p>
+
+            <p class="pHead">Nanometer</p>
+            <p class="pText">One billionth of a meter. A human hair is about one
+                hundred thousand nanometers in diameter.
+            </p>
+
+            <p class="pHead">Nanoparticle/Nano Particle</p>
+            <div class="pText" style="margin-bottom: 1rem"> A particle
+                on the nanoscale, or a particle that is roughly one hundred
+                thousandth the width of a human hair. Nanoparticles can be used to:
+            <ul class="accordionList">
+            <li>mark cancer cells or genetic abnormalities</li>
+            <li>deliver chemotherapy directly to cancer cells</li>
+            <li>make fabric bacteria (and therefore smell-resistant) or stain resistant</li>
+            <li>create a ‘skin’ on prosthetics that is self-healing</li>
+            <li>clean certain pollutants from ground water</li>
+            <li>increase battery life and power, among just a few things these amazing inventions can do!</li>
+        </ul>
+            </div>
+
+            <p class="pHead">Nanoscale</p>
+            <p class="pText">The scale of a nanometer or nanoparticl.
+            </p>
+
+            <p class="pHead">Nanotechnology</p>
+            <p class="pText">Technology
+                that deals with things less than 100 nanometers in size.
+            </p>
+
+            <p class="pHead">Operating Expenses</p>
+            <p class="pText">Those expenses that a business
+                has that are not directly associated with the production of goods or services,
+                for example paper for the copier (assuming the business is not a copy shop),
+                office supplies, cleaning supplies, etc.
+            </p>
+
+            <p class="pHead">Overhead</p>
+            <p class="pText">The same as operating expenses.
+                Expenses that cannot conveniently be associated with production of goods or
+                services that are the company’s main business.
+            </p>
+
+            <p class="pHead">Patent</p>
+            <p class="pText">A license that gives the
+                patent holder the sole right to exclude others from making, using, or selling an invention.
+            </p>
+
+            <p class="pHead">Percentage</p>
+            <p class="pText">Part of share of a whole.
+            </p>
+
+            <p class="pHead">Point-of-Care Diagnostics</p>
+            <p class="pText">Medical tests performed
+            while the patient waits, like a blood sugar test for a diabetic patient or a
+            throat swab for a suspected strep throat patient.
+            </p>
+
+            <p class="pHead">Profit</p>
+            <p class="pText">The difference between the amount
+            earned (income) and the amount of expenses (goods or services purchased)
+            </p>
+
+            <p class="pHead">Proportions</p>
+            <p class="pText">Part or number considered in relation to the whole.
+        </p>
+
+            <p class="pHead">Raw Materials</p>
+            <p class="pText">The basic substances from which a product is made.
+            </p>
+
+            <p class="pHead">Revenue</p>
+            <p class="pText">The amount of money a business receives during a set period of time.
+            </p>
+
+            <p class="pHead">Proportions</p>
+            <p class="pText">Part or number considered in relation to the whole.
+            </p>
+
+            <p class="pHead">Shelf Life</p>
+            <p class="pText">The length of time a product remains useable or saleable.
+            </p>
+
+            <p class="pHead">Timeline</p>
+            <p class="pTextLast">A linear image of important
+                events in the order in which they occurred or should occur.
+            </p>
+
+        </div>
+
+        <div class="accordion">Credits and Thanks
+        </div>
+        <div class="accordionContentTwoColumn">
+            <div class="accordionColumns">
+
+                <div class="columnLeft">
+<!--                    <p>Logo will go here</p>-->
+                    <p class="pHead">Jessica Winter, Nano Engineer
+                        <p>Thanks to Jessica for writing grants and helping us out
+                        during a stressful time in her life!</p><br>
+
+                    <p class="pHead">Kristie Melnik, Chief Operating Officer</p>
+                    <br><br>
+                    <hr>
+                    <div class="columnLeftBasic">
+                    <p class="pHead">Partners</p>
+                    <p class="accordionListTitle">New Albany City Schools
+                    <ul class="accordionList">
+                        <li>Peter Barnes - New Albany Middle School</li>
+                    </ul>
+                    </p>
+                    <p class="accordionListTitle">Dublin City Schools
+                    <ul class="accordionList">
+                        <li>Andrea Williams - Karrer Middle School</li>
+                    </ul>
+                    </p>
+                    </div>
+
+                </div>
+
+                <div class="columnRight">
+
+                    <p class="pHead">Project Production and Development
+                    </p>
+
+                    <p class="accordionListTitle">Project Director: Gail Wheatley
+                    <ul class="accordionList">
+                        <li>Research</li>
+                        <li>Script Writing</li>
+                        <li>Activity Ideas & Concepts</li>
+                    </ul>
+                    </p>
+                    <p class="accordionListTitle">Programming: Cybervation
+                    </p>
+                    <p class="accordionListTitle">Editing: Sarah Small
+                    </p>
+                    <br><br>
+                    <hr>
+                    <p class="footNote">
+                        This activity is dedicated to Sarah Smail and Jen Cassidy, who worked long
+                        hours without pay to keep Edheads running through a particularly difficult time.
+                        You can't ask for better human beings or better co-workers!!</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sideBar">
+        <!--        <div class="sideBarText">Sidebar Text</div>-->
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=331605&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=596345&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+
+        <div sec:authorize="isAuthenticated()" class="buttonContainer">
+            <a href="/welcome">View Teacher Resources</a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer-component></footer-component>
+</main>
+</body>
+</html>

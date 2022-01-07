@@ -1,0 +1,20 @@
+#faqContainer{
+    display: flex;
+    margin: auto;
+    width: 80%;
+}
+
+.faqContentContainer{
+    margin: 22rem 3rem 3rem 0rem;
+    width: 80%;
+}
+
+.gameTitle{
+    font-size: 1.125rem;
+    font-weight: 900;
+    margin-bottom: .125rem;
+}
+
+.gameInfo{
+    margin-bottom: 1rem;
+}

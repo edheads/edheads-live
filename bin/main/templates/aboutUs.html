@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+
+
+    <script src="js/accordion.js" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+<body>
+<div class="stickyHeader">
+    <header>
+        <div class="headerContents">
+            <div class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem"><a href="/donate">Donate</a></li>
+                    <li class="topNavItem"><a href="/login">Log In</a></li>
+                    <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+            </div>
+
+            <div class=""> </div>
+
+            <div class="mainNavContainer">
+                <ul class="mainNav">
+                    <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
+                    <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+                    <li class="mainNavItem active"><a href="/about-us">About Us</a></li>
+                    <li class="mainNavItem"><a href="/our-games">Our Games</a></li>
+                    <li class="mainNavItem"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+                    <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+                </ul>
+                <div class="logoWG">
+                    <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+                </div>
+            </div>
+        </div>
+    </header>
+        <div class="secondaryNavContainer">
+            <ul class="secondaryNav">
+                <li class="secondaryNavItem"><a href="/faq">FAQ's</a></li>
+                <li class="secondaryNavItem"><a href="/awards">Awards</a></li>
+                <li class="secondaryNavItem"><a href="/privacy">Privacy</a></li>
+                <li class="secondaryNavItem"><a href="/terms-of-use">Terms of Use</a></li>
+                <li class="secondaryNavItem"><a href="/activity-help">Activity Help</a></li>
+            </ul>
+        </div>
+</div>
+<!--</header>-->
+<main>
+
+<section id="basicPageContainer">
+
+    <div class="basicPageSubNav">
+        <div class="basicPageMain">
+            <h1>About Us</h1>
+            <div class="basicPageContent">
+                <p>Edheads is an online educational resource that provides
+                    science and math games and activities that promote critical
+                    thinking. Choose from Simple Machines, Manufacturing Techinician or
+                    Nano Start Up, with others coming soon! All activities meet
+                    state and national standards. </p>
+
+                <p> We partner with corporations, universities, and school
+                    systems throughout the United States, which help us research,
+                    design, and test our activities every step of the way.
+                    Not only do teachers and students appreciate our free activities,
+                    Edheads has been recognized by almost every major award
+                    on the Web for our excellent educational content. </p>
+
+                <p>So check out Our Games at the top of the page to
+                    dive into an activity and let the fun and learning begin! </p>
+            </div>
+        </div>
+
+        <div class="accordion">Our Mission
+        </div>
+        <div class="accordionContent">
+            <p>By capturing student imaginations and igniting career aspirations,
+                Edheads empowers students to pursue fulfilling, productive
+                careers in science, technology, engineering and math.
+                We tie school to work by reinforcing basic skills and demonstrating
+                how they are applied in STEM careers.  On Edheads' site, students
+                can be surgeons, manufacturing technicians, find simple machines,
+                predict the weather, create a stem cell line and more!
+            </p>
+        </div>
+
+        <div class="accordion">Our Vision
+        </div>
+        <div class="accordionContent">
+            <p>Through corporate philanthropy, sponsorships, partnerships and donations,
+                Edheads provides exciting games and experiences that inspire today’s
+                K-12 students to become the STEM leaders of tomorrow.
+                We believe every student should have the opportunity to develop
+                their potential and fulfill their dreams and career aspirations.
+            </p>
+        </div>
+
+        <div class="accordion">Our Values
+        </div>
+        <div class="accordionContent">
+           <ul>
+               <li>Relevance: Connecting science and math education standards to learning
+                   outcomes related to real-world careers.</li>
+               <li>Access: Giving educators a way to influence their students' future
+               career paths with online learning that is widely accessible.</li>
+               <li>Quality games: Helping teachers, parents, and students meet state and
+               national learning goals through highly interactive and engaging content.</li>
+               <li>Evidence: Evaluating the difference made in student STEM knowledge and
+               attitudes toward STEM careers.</li>
+           </ul>
+        </div>
+
+        <div class="accordion">Connection to Standards
+        </div>
+        <div class="accordionContent">
+            <p>All the activities at the Edheads site will have connections
+                to National and State standards in their teacher sections.
+                Please look for these sections under each activity heading.
+            </p>
+        </div>
+        <div class="accordion">Edheads Team
+        </div>
+        <div class="accordionContent">
+            <p>Gail Wheatley, Executive Director</p>
+                <p>Gail has a passion for fun and informal education and a
+                great deal of experience in informal learning institutions
+                and science education. She brainstorms ideas with Eric, e
+                stablishes partnerships with scientists, surgeons and people
+                and corporations that do interesting things. Gail writes the
+                grants and the storyboards for the activities, manages the projects
+                overall, crunches lots of numbers and does the long term planning
+                for Edheads. She's always on the lookout for great new ideas and
+                people who have them. She lives with two monster Westies
+                (no, that is not an oxymoron) whose current science experiment is
+                    determining how many times they can dig up an apple tree before killing it.</p>
+            </p>
+        </div>
+
+        <div class="accordion">Our Board of Directors
+        </div>
+        <div class="accordionContent">
+            <p style="text-transform: uppercase; color: #4a86c2; margin: 0;"> Jason Elvers</p>
+            <p>Vorys, Sater, Seymour & Pease, LLP, Columbus, Ohio </p>
+            <p style="text-transform: uppercase; color: #4a86c2; margin: 0;">  Julie Carpenter</p>
+            <p>Cardinal Heatlh, Dublin, Ohio </p>
+            <p style="text-transform: uppercase; color: #4a86c2; margin: 0;">  Kayleigh Hunnicutt</p>
+            <p> Dublin City Schools, School Psychologist </p>
+            <p style="text-transform: uppercase; color: #4a86c2; margin: 0;">  Lisa Chapman</p>
+            <p> Elevated Marketing Services, Columbus, Ohio </p>
+            <p style="text-transform: uppercase; color: #4a86c2; margin: 0;">  Cody Yarletts</p>
+            <p>  Parker Hannifin,Columbus, Ohio </p>
+            <p style="text-transform: uppercase; color: #4a86c2; margin: 0;">  Ryan J. Vonderbrink</p>
+            <p>  Seegrid, New Albany, Ohio </p>
+            <p style="text-transform: uppercase; color: #4a86c2; margin: 0;">  Joshua Yakunich</p>
+            <p> Ohio State University Wexner Medical Center, Columbus, Ohio </p>
+
+            <p>  Interested in serving on our Board of Directors or volunteering for Edheads?
+                Please check out our listings on VolunteerMatch or contact us at info@edheads.org.
+                For all questions, comments, and concerns, please send an email to info@edheads.org.
+
+            </p>
+        </div>
+
+    </div>
+    <div class="sideBarSubNav">
+        <!--        <div class="sideBarText">Sidebar Text</div>-->
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=134320&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=331604&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+    </div>
+
+</section>
+</main>
+<footer-component></footer-component>
+</body>
+</html>

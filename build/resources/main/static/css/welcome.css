@@ -1,0 +1,232 @@
+
+h2{
+    color: #d1a10e;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+h3{
+    color: #cbd543;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 2.25rem;
+    padding: 0 0 .75rem 0;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.textBoxButton{
+    background-color: #4a86c2;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: .05rem;
+    margin-top: 1.25rem;
+    padding: 1rem 1.5rem;
+    text-transform: capitalize;
+}
+
+.textBoxButton a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#titlePanel{
+    background-color: #ffffff;
+    border-bottom: solid 7px #474747;
+    /*border-top: solid 7px #474747;*/
+    display: flex;
+    justify-content: center;
+    min-width: 100vw;
+    position: relative;
+}
+
+.contentContainerTitle{
+    display: flex;
+    justify-content: center;
+    margin: 10rem auto 2rem;
+    width: 80%;
+}
+
+.welcomeTitle{
+    color: #cbd543;
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 3rem 0;
+    text-shadow: 2px 2px 0px #474747;
+}
+
+.contentPanel{
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 700px;
+    justify-content: center;
+    min-width: 100vw;
+    position: relative;
+}
+
+/*END WELCOME GLOBAL STYLING*/
+
+
+/*BEGIN ABOUT US SECTION*/
+
+
+#aboutUs{
+    background-image: url("/assets/welcomeBackground.jpg");
+}
+
+.contentContainerTextLeft{
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    position: absolute;
+    width: 80%;
+}
+
+.textBoxLeft{
+    background: #fff;
+    border: .5rem solid #cbd543;
+    border-radius: 1.5rem;
+    line-height: 1.75rem;
+    letter-spacing: .0125rem;
+    margin: 8rem auto auto;
+    padding: 3rem;
+    position: relative;
+    width: 95%;
+}
+
+.textBoxLeft:before {
+    border-bottom: 59px solid transparent;
+    border-left: 77px solid #d2d063;
+    border-right: 3px solid transparent;
+    border-top: 52px solid transparent;
+    content: "";
+    position: absolute;
+    right: -5.5rem;
+    top: 2.125rem;
+}
+
+.textBoxLeft:after {
+    border-bottom: 59px solid transparent;
+    border-left: 77px solid #fff;
+    border-right: 3px solid transparent;
+    border-top: 52px solid transparent;
+    content: "";
+    height: 0px;
+    position: absolute;
+    right: -4.75rem;
+    top: 2.125rem;
+}
+
+.aboutUsCharacter{
+    padding: 2rem 0rem;
+}
+
+/*END ABOUT US SECTION*/
+
+/*BEGIN AD SECTION*/
+
+.adPanel{
+    background-color: #ffffff;
+    border-bottom: solid 7px #474747;
+    border-top: solid 7px #474747;
+    display: flex;
+    justify-content: center;
+    min-width: 100vw;
+    position: relative;
+}
+
+.contentContainerAd{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem 0;
+    width: 80%;
+}
+
+.adLeft{
+    height: 250px;
+    width: 300px;
+}
+
+.adRight{
+    height: 250px;
+    width: 300px;
+}
+
+/*END AD SECTION*/
+
+/*BEGIN SIGN UP SECTION*/
+
+#signUp{
+    background-image: url("/assets/signUpBackground.jpg");
+}
+
+.contentContainerTextRight{
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: absolute;
+    width: 80%;
+}
+
+.textBoxRight{
+    background: #fff;
+    border: .5rem solid #cbd543;
+    border-radius: 1.5rem;
+    line-height: 1.75rem;
+    letter-spacing: .0125rem;
+    margin: 8rem auto auto;
+    padding: 3rem;;
+    position: relative;
+    width: 95%;
+}
+
+.textBoxRight:before {
+    border-bottom: 59px solid transparent;
+    border-left: 37px solid transparent;
+    border-right: 79px solid #cbd543;
+    border-top: 52px solid transparent;
+    content: "";
+    left: -7.75rem;
+    position: absolute;
+    top: 2.125rem;
+}
+
+.textBoxRight:after {
+    border-bottom: 59px solid transparent;
+    border-left: 37px solid transparent;
+    border-right: 79px solid #fff;
+    border-top: 52px solid transparent;
+    content: "";
+    left: -7rem;
+    position: absolute;
+    top: 2.125rem;
+}
+
+.signUpCharacter {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem 0rem;
+}
+
+/*END SIGN UP SECTION*/
+
+/*BEGIN DONATE SECTION*/
+
+#donate{
+    background-image: url("/assets/donateBackground.jpg");
+}
+
+.donateCharacter{
+    padding: 2rem 0rem;
+}
+
+/*END DONATE SECTION*/

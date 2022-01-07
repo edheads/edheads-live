@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>STEM Professionals</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/form.css">
+
+</head>
+<body>
+<section id="basicPageContainer">
+    <div class="signUpContainer">
+        <div class="basicPageMain">
+
+            <div class="closeForm"><a href="/welcome">X</a></div>
+
+            <div class="signUpPageContent">
+                <div class="container text-center">
+
+                    <div>
+                        <h1 class="signUpTitle">Edit STEM Professional</h1>
+                    </div>
+                    <form th:action="@{/stem-careers/edit}" th:object="${user}"
+                          method="post">
+
+                        <div class="accountRowOne">
+                            <input type="hidden" th:field="*{id}">
+                            <input type="hidden" th:field="*{role}">
+                            <input type="hidden" th:field="*{city}">
+                            <input type="hidden" th:field="*{state}">
+                            <input type="hidden" th:field="*{dateCreated}">
+                            <input type="hidden" th:field="*{gameHelpInd}">
+                            <input type="hidden" th:field="*{gameFundingInd}">
+                            <input type="hidden" th:field="*{socialMediaInd}">
+                            <input type="hidden" th:field="*{volunteerInd}">
+                            <input type="hidden"   th:field="*{approvedByAdmin}">
+                        </div>
+
+                            <input  class="form-control-readonly"th:field="*{firstName}" readonly>
+                            <input  class="form-control-readonly" th:field="*{lastName}" readonly>
+
+                        <div class="company">
+                                        <textarea type="text" placeholder="Company"
+                                                  th:field="*{company}" class="form-control" maxlength="50"
+                                                  ></textarea>
+                        </div>
+
+                        <div class="university">
+                                        <textarea type="text" placeholder="University/College"
+                                                  th:field="*{university}" class="form-control" maxlength="50"
+                                                  ></textarea>
+                        </div>
+
+                        <div class="careerTitle">
+                                        <textarea type="text" placeholder="What is your job title? (generic preferred)"
+                                                  th:field="*{careerTitle}" class="form-control" maxlength="50"
+                                                  required></textarea>
+                        </div>
+
+                        <div class="careerDescription">
+                                    <textarea type="text"
+                                              placeholder="Please provide summary of your research or job. What is an average day like or duties performed?"
+                                              th:field="*{careerDescription}" class="form-control" maxlength="5000"
+                                              ></textarea>
+                        </div>
+
+                        <div class="educationDescription">
+                                    <textarea type="text"
+                                              placeholder="What is your education background and what prompted you to go in this career direction?"
+                                              th:field="*{educationDescription}" class="form-control" maxlength="1000"
+                                              ></textarea>
+                        </div>
+
+                        <div class="careerPathChallenge">
+                                    <textarea type="text"
+                                              placeholder="What have you struggled with or overcome in your educational or life path to your current job?"
+                                              th:field="*{careerPathChallenge}" class="form-control" maxlength="2000"
+                                              ></textarea>
+                        </div>
+
+                        <div class="jobBestDescription">
+                                    <textarea type="text" placeholder="What is the best part of your research/job?"
+                                              th:field="*{jobBestDescription}" class="form-control" maxlength="1000"
+                                              ></textarea>
+                        </div>
+
+                        <div class="jobWorstDescription">
+                                    <textarea type="text"
+                                              placeholder="What is the most challenging/difficult part of your research/job? (please make sure it is related to the actual job function and not the workplace)"
+                                              th:field="*{jobWorstDescription}" class="form-control" maxlength="1000"
+                                              ></textarea>
+                        </div>
+
+                        <div class="jobExcitingDescription">
+                                    <textarea type="text" placeholder="What is the most exciting part of your job?"
+                                              th:field="*{jobExcitingDescription}" class="form-control" maxlength="1000"
+                                              ></textarea>
+                        </div>
+
+                        <div class="memorableCareerMoment">
+                                    <textarea type="text" placeholder="What is your most memorable career-related moment?"
+                                              th:field="*{memorableCareerMoment}" class="form-control" maxlength="1000"
+                                              ></textarea>
+                        </div>
+
+                        <div class="pastChangeDesc">
+                                    <textarea type="text"
+                                              placeholder="What has changed about your profession in the past ten years?"
+                                              th:field="*{pastChangeDesc}" class="form-control" maxlength="1000"
+                                              ></textarea>
+                        </div>
+
+                        <div class="futureChangeDesc">
+                                    <textarea type="text"
+                                              placeholder="What do you think will change in the next 10 years?"
+                                              th:field="*{futureChangeDesc}" class="form-control" maxlength="1000"
+                                              ></textarea>
+                        </div>
+                        <div class="keywords">
+                            <p>Keywords:</p>
+                                    <textarea type="text"
+
+                                              th:field="*{keywords}" class="form-control" maxlength="1000"
+                                    ></textarea>
+                        </div>
+
+                        <div class="buttonContainer">
+                            <button type="submit" class="signUpButton">Submit</button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

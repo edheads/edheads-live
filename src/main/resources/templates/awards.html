@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  <meta charset="UTF-8">
+  <title>Awards</title>
+  <link rel="icon" href="/assets/favicon.ico">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/basicPage.css">
+
+
+
+  <script src="components/header.js" type="text/javascript" defer></script>
+  <script src="js/accordion.js" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '387795396444479');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=387795396444479&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+</head>
+<body>
+<div class="stickyHeader">
+  <header>
+    <div class="headerContents">
+      <div class="topNav">
+        <ul class="mainNav">
+          <li class="topNavItem"><a href="/donate">Donate</a></li>
+          <li class="topNavItem"><a href="/login">Log In</a></li>
+          <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+        </ul>
+      </div>
+      <div class="logo">
+        <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+      </div>
+
+      <div class=""> </div>
+
+      <div class="mainNavContainer">
+        <ul class="mainNav">
+          <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
+          <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+          <li class="mainNavItem active"><a href="/about-us">About Us</a></li>
+          <li class="mainNavItem"><a href="/our-games">Our Games</a></li>
+          <li class="mainNavItem"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+          <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+        </ul>
+        <div class="logoWG">
+          <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+        </div>
+      </div>
+    </div>
+  </header>
+    <div class="secondaryNavContainer">
+      <ul class="secondaryNav">
+        <li class="secondaryNavItem"><a href="/faq">FAQ's</a></li>
+        <li class="secondaryNavItem active"><a href="/awards">Awards</a></li>
+        <li class="secondaryNavItem"><a href="/privacy">Privacy</a></li>
+        <li class="secondaryNavItem"><a href="/terms-of-use">Terms of Use</a></li>
+        <li class="secondaryNavItem"><a href="/activity-help">Activity Help</a></li>
+      </ul>
+    </div>
+</div>
+
+<main>
+
+<section id="basicPageContainer">
+
+  <div class="basicPageSubNav">
+    <div class="basicPageMain">
+      <h1>Awards</h1>
+      <div class="basicPageContent">
+        <p class="pHead">Jun 2003	</p>
+          <p>Edheads won the first annual CMYK Magazine Interactive Design Contest.</p>
+
+        <p class="pHead">Feb 2004</p>
+        <p>Edheads is Macromedia Site of the Day.</p>
+
+        <p class="pHead"> Feb 2004</p>
+        <p>Edheads was SBC Blue Web’n Hot Site of the Week.</p>
+
+        <p class="pHead"> Mar 2004</p>
+        <p>Flash Forward 2004 winner for best educational project.</p>
+
+        <p class="pHead"> Apr 2004</p>
+        <p>Edheads had the top two listings (Simple Machines and Virtual
+          Knee Surgery) on the Eisenhower National Clearinghouse Digital Dozen.</p>
+
+        <p class="pHead">May 2004</p>
+        <p>Edheads nominated for the highly prestigious Webby Award in the Science category.</p>
+
+        <p class="pHead"> May 2004</p>
+        <p>COSI and Edheads win the Gold Science MUSE award for best multimedia
+          project against international competition.</p>
+
+        <p class="pHead">Aug 2004</p>
+        <p>Yahoo Picks New and Notable Sites.</p>
+
+        <p class="pHead">Sep 2004</p>
+        <p>Communication Arts Interactive Design Competition, Edheads won for best use of Flash.</p>
+
+        <p class="pHead">2003-2004</p>
+        Multiple award winner for HOW Design Magazine’s Top Ten Sites of
+          the Month and multiple winner of the USA Today Hot Site of the Day.</p>
+
+        <p class="pHead">2008</p>
+        <p>US Distance Learning Assocation’s Award for Outstanding Leadership
+          by an Individual in the Field of Distance Learning.</p>
+
+        <p class="pHead">Feb 2010	</p>
+        <p>Edheads won the Kids at Play Interactive (KAPi) Award for Best Children’s
+          Web site or Service for Deep Brain Stimulation.</p>
+
+        <p class="pHead">Feb 2010	</p>
+        Edheads won the TechColumubus Award for Innovation in Nonprofit Service Delivery.</p>
+
+        <p class="pHead">Sep 2011	</p>
+        <p>Finalist in the INDEX Award: Design to Improve Life, the largest cash
+          prize for design in the world, under the patronage of HRH the Crown Prince of Denmark.
+          Only 6% of the more than 1,000 entries made it to the finalist’s list.</p>
+      </div>
+    </div>
+
+    <div class="accordion">Mentions
+    </div>
+    <div class="accordionContent">
+      <p>Bonus.com:  "Your excellent website has been selected by the editor's
+        at Bonus.com! We're presenting you with the "Editor's Choice"
+        Award as an appreciation of your work."   </p>
+
+      <p>HOW Magazine:  "I just wanted to write and let you know that we
+        at HOW magazine were so taken with your site that we have listed
+        it as one of our Web site's "Top 10" sites to see this month."   </p>
+
+      <p>Edheads was the USA Today newspaper's hot site of the day on May, 22 2003!   </p>
+
+      <p>The Golden Hive Award was created to identify supreme achievement in all
+        areas of Web arts and sciences at any level, and Edheads has just won a
+        'Top 1%' of the Web award for science.   </p>
+
+      <p>Edheads made its  way to the Yahooligan's Cool site of the week list.   </p>
+
+      <p>Edheads has won 4 Nem5 awards. One for Flash development, one for being
+        a great kid's site, one for being a valuable resource, and an over-all silver award.   </p>
+
+      <p>Edheads was voted 'Site of the Year' for 2003 by the Nem5 Judges.   </p>
+
+      <p>Edheads is on the Awesome Library site, which showcases the top 5% internet learning resources.   </p>
+
+      <p>Edheads was a Featured Site of the Week on The Educators Network.   </p>
+
+
+    </div>
+
+  </div>
+  <div class="sideBarSubNav">
+    <!--        <div class="sideBarText">Sidebar Text</div>-->
+    <div class="sideBarAd">
+      <script src="//ap.lijit.com/www/delivery/fpi.js?z=331605&width=300&height=250"></script>
+      <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+    </div>
+
+    <div class="sideBarAd">
+      <script src="//ap.lijit.com/www/delivery/fpi.js?z=596345&width=300&height=250"></script>
+      <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+    </div>
+  </div>
+
+</section>
+
+<footer-component></footer-component>
+</main>
+</body>
+</html>

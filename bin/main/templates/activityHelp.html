@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <meta charset="UTF-8">
+    <title>Activity Help</title>
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+
+
+    <script src="js/accordion.js" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+<body>
+
+<div class="stickyHeader">
+    <header>
+        <div class="headerContents">
+            <div class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem"><a href="/donate">Donate</a></li>
+                    <li class="topNavItem"><a href="/login">Log In</a></li>
+                    <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+            </div>
+
+            <div class=""> </div>
+
+            <div class="mainNavContainer">
+                <ul class="mainNav">
+                    <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
+                    <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+                    <li class="mainNavItem active"><a href="/about-us">About Us</a></li>
+                    <li class="mainNavItem"><a href="/our-games">Our Games</a></li>
+                    <li class="mainNavItem"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+                    <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+                </ul>
+                <div class="logoWG">
+                    <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+                </div>
+            </div>
+        </div>
+    </header>
+        <div class="secondaryNavContainer">
+            <ul class="secondaryNav">
+                <li class="secondaryNavItem"><a href="/faq">FAQ's</a></li>
+                <li class="secondaryNavItem"><a href="/awards">Awards</a></li>
+                <li class="secondaryNavItem"><a href="/privacy">Privacy</a></li>
+                <li class="secondaryNavItem"><a href="/terms-of-use">Terms of Use</a></li>
+                <li class="secondaryNavItem active"><a href="/activity-help">Activity Help</a></li>
+            </ul>
+        </div>
+</div>
+
+<main>
+
+<section id="basicPageContainer">
+
+    <div class="basicPageSubNav">
+        <div class="basicPageMain">
+            <h1>Activity Help</h1>
+            <div class="basicPageContent">
+                <p>Are you having problems with an activity? Try these steps!</p>
+
+                <p>Are you using an updated browser? If not, or if you're not sure whether
+                    your browser is up-to-date, download the latest version of your preferred
+                    browser. We recommend a well-known, common browser to make certain the
+                    games will work, these include Chrome, Safari, and Firefox.
+                    Internet Explorer is no longer supported, making it somewhat problematic
+                    and other browsers like Opera and Dolphin are not easy to deal with from a
+                    game development standpoint.</p>
+
+                <p>Our activities are launched in a pop-up window. Make sure that your
+                    internet browser's pop-up blocking feature or your pop-up blocking
+                    software is either turned off, or is set to allow pop-ups.</p>
+
+                <p>If you can't hear any sound, make sure that your speakers and the audio
+                    settings on your computer are turned up to an appropriate level.
+                    Some headphones also have buttons and/or switches that allow you to control
+                    the volume. If you're using headphones with this feature, make sure that the
+                    volume is turned up there, as well.</p>
+
+                <p>If the game or a section of a game won’t load, try closing your browser and
+                    starting again, then tryto load the game or section again.  Our games are
+                    large files and sometimes the buffering capacity on a device can prevent our
+                    games from loading.  One way to increase buffering capacity is to delete
+                    internet history.  You can also try a different browser, if the games will
+                    not load in the browser you are using.</p>
+
+                <p>Our games are in HTML5 and should work fine on mobile and iDevices.
+                    However, many of our games have detailed graphics that don’t show up
+                    well on small screens.  If you are having problems playing a game or
+                    seeing everything on a phone or small tablet, you might need to move to
+                    a larger screen.</p>
+
+                <p>If you continue to have issues with our activities after
+                    going through the steps above, contact your network administrator
+                    and email us at <a href = "mailto: info@edheads.org">info@edheads.org</a>
+                    with the details of the
+                    issue you're having. Please include information about the browser
+                    and platform (desktop, laptop, tablet) you are using.</p>
+
+            </div>
+        </div>
+
+<!--        <div class="accordion">Accordion Title-->
+<!--        </div>-->
+<!--        <div class="accordionContent">-->
+<!--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+<!--                Etiam tristique, ex ut tincidunt ullamcorper, sapien lorem viverra eros, ac lobortis massa-->
+<!--                risus ut massa.-->
+<!--            </p>-->
+<!--        </div>-->
+
+    </div>
+    <div class="sideBarSubNav">
+        <!--        <div class="sideBarText">Sidebar Text</div>-->
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=331605&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=596345&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+    </div>
+
+</section>
+
+    <footer-component></footer-component>
+    </main>
+</body>
+</html>

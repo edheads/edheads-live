@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <meta charset="UTF-8">
+    <title>Teacher Resources</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/teacherResources.css">
+
+
+    <script src="js/accordion.js" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+<body>
+<div class="stickyHeader">
+    <header>
+        <div class="headerContents">
+            <div sec:authorize="!isAuthenticated()" class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem"><a href="/donate">Donate</a></li>
+                    <li class="topNavItem"><a href="/login">Log In</a></li>
+                    <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+                </ul>
+            </div>
+            <div sec:authorize="isAuthenticated()" class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem">
+                        <form name='logout' th:action="@{/logout}" method='post'>
+                            <button class="topNavItem" type="submit">Log Out</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+            </div>
+
+            <div class=""> </div>
+
+            <div class="mainNavContainer">
+                <ul class="mainNav">
+                    <li sec:authorize="isAuthenticated()" class="mainNavItem active"><a href="/teachers">Teachers</a></li>
+                    <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+                    <li class="mainNavItem"><a href="/about-us">About Us</a></li>
+                    <li class="mainNavItem"><a href="/our-games">Our Games</a></li>
+                    <li class="mainNavItem"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+                    <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+                </ul>
+                <div class="logoWG">
+                    <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+    <main>
+
+<section id="basicPageContainer">
+
+    <div class="basicPageContentContainer">
+        <div class="basicPageMain">
+            <h1>Teacher Resources</h1>
+            <div class="basicPageContent">
+                <p>Find all of your teacher content in one area!
+                    Look here for connections to standards, worksheets, quizzes,
+                    answer keys, discussion questions and more! You can also click a
+                    button on the game launch page to connect to teacher content,
+                    if you are already logged in.</p>
+            </div>
+        </div>
+        <!--        start teacher accordion-->
+        <div class="accordion">Nano Start Up
+        </div>
+        <div class="accordionContent">
+            <p class="pHeadOrange">Recommended Grade Levels: 5-8
+            </p>
+
+            <div class="nestedAccordion">Tips for using the site with students
+            </div>
+
+            <div class="accordionContent">
+                <p>Before using this activity in class (or at home), go through the activity
+                    once to make sure it works correctly on your computer(s) or devices.
+                    Please be aware that this game is in HTML5, which is not stable across
+                    browsers and platforms.
+                </p>
+                <p>Your computer or devices will need to have some sort of sound output. Either
+                    speakers or headphones will work well. The majority of this activity has voice
+                    audio. We highly recommend headphones or ear buds in a classroom setting.
+                    Students with hearing impairments can read the text at the bottom
+                    of the screen. If you are having difficulty hearing the audio,
+                    check the audio settings on your computer or device.</p>
+                <p>The worksheet is highly recommended for this activity and is available below under
+                    ‘Assessment Tools.’ If a teacher prefers not to use the worksheet,
+                    he/she should make this clear to the students, as the game refers to
+                    the worksheet numerous times.
+                </p>
+                <p>Students in the target grade-range will take approximately 35 - 40
+                    minutes to complete the entire activity.
+                </p>
+            </div>
+            <div class="nestedAccordion">Assessment Tools
+            </div>
+            <div class="accordionContent">
+                <p>Teachers may want to have students put their names on the worksheets and turn them in,
+                    which should indicate if students completed the assigned activity.
+                    There is also a quiz that can be given.
+                </p>
+                <p><a href="assets/studentWorksheet_NS.pdf" target="_blank">Student Worksheet</a><br>
+                <a href="assets/studentQuiz_NS.pdf" target="_blank">Ten Question Quiz</a><br>
+                    <a href="assets/worksheetKey_NS.pdf" target="_blank">Key to Worksheet</a><br>
+                    <a href="assets/quizKey_NS.pdf" target="_blank">Key to Quiz</a>
+                </p>
+            </div>
+            <div class="nestedAccordion">Extension Activities
+            </div>
+            <div class="accordionContent">
+                <p>After students use the site, additional in-class discussion questions
+                    (which can also act as assessment tools) or activities can be asked or assigned.
+                </p>
+                <p>Why did Kristie involve a business consultant and another friend with a business when
+                    it came time to build the budget? Why wouldn’t one resource be enough?</p>
+                   <p class="pText"> <span class="pHead">Answer:</span> There was no existing company
+                       that was exactly like the Multidot
+                company Kristie was starting. For this reason, it made sense to check with
+                others with similar companies to see what they did. In reality,
+                a person starting a new business would most likely check with 5-10
+                sources. It’s always best to be thorough.
+                </p>
+                <p>Why would Kristie budget more for sales and marketing than many start up business do?
+                </p>
+                <p class="pText"> <span class="pHead">Answer:</span> She researched this enough to know
+                    that many companies were running out of money for sales and marketing using the
+                    lower percentage. So she learned from their mistakes and budgeted a
+                    higher percentage of the income.
+                </p>
+                <p>Why did Jessica ask to have the results left on her desk of all
+                    the trial experiments to determine the best proportions of materials?</p>
+                <p class="pText"> <span class="pHead">Answer:</span> Again, it’s best to be thorough.
+                 Jessica is the expert and, while the numbers seem fairly straightforward,
+                she might see something that we missed. She might interpret the numbers
+                a different way, based on her knowledge and expertise.
+                Most scientists choose to look at raw data when it is available to see
+                if they interpret the data the same way as others do.
+            </p>
+                <p>At the end of the game, Jessica and Kristie were talking about
+                    selling Multidot and starting a new company around another
+                    one of Jessica’s discoveries.
+                </p>
+                <p>Do you agree with this plan? What are your thoughts on that idea?
+                </p>
+                <p class="pText">In favor of selling is the fact that a small company with
+                    2-3 employees will have a hard time keeping up with big pharmaceutical
+                    companies that sell this type of thing internationally.
+                    Also, those big pharmaceutical companies can buy Jessica’s dots,
+                    study them, change or improve them and then begin selling them in
+                    competition with Jessica. Against selling is the fact that it took a lot of time
+                    and work to start the company. It will take a lot of time and work to
+                    start another company. Is there some compromise path that could be
+                    taken? Maybe Jessica works for a large pharmaceutical company and retains
+                    rights to her discoveries??
+                </p>
+                <p class="pText">If they were to sell their company, research how they would go about doing that.
+                    Do a search for ways to value a business and then estimate what you think the company
+                    might be worth. Keep in mind that they are just beginning to sell their product,
+                    so they don’t have any income, exactly. They do have office and lab equipment as assets.
+                    They also have the patent of Jessica’s discovery as a big asset and the knowledge of
+                    how to increase production to commercial levels. But the company hasn’t really
+                    proven itself as a high income producer. After researching this question, would
+                    you recommend Jessica and Kristie sell their company or sell right to the patent
+                    or stay on the path they started down, to market the dot themselves?
+                </p>
+                <p class="pHead">Writing activity</p>
+                    <p>Write a marketing ‘pitch’ for Jessica’s discovery.
+                    How would you convince hospitals and doctors to purchase the Multidot
+                    in the shortest amount of words, covering the advantages to her Multidot over
+                    her competitor’s dots?
+                </p>
+            </div>
+            <div class="nestedAccordion">Standards
+            </div>
+            <div class="accordionContent">
+
+                <p class="pHead">Next Generation Science Standards:<br>
+                    Engineering Design</p>
+
+                <p>3-5-TS1-2. Generate and compare multiple possible solutions to a problem
+                    based on how well each is likely to meet the criteria and constraints of the problem. </p>
+
+                <p>3-5-ETS1-3. Plan and carry out fair tests in which variables are controlled and
+                    failure points are considered to identify aspects of a model or prototype that can be improved. </p>
+
+                <p> MS-ETS1-1. Define the criteria and constraints of a design problem with
+                    sufficient precision to ensure a successful solution, taking into account relevant
+                    scientific principles and potential impacts on people and the natural
+                    environment that may limit possible solutions. </p>
+
+                <p>MS-ETS1-2.Evaluate competing design solutions using a systematic
+                    process to determine how well they meet the criteria and constraints of the problem.
+                </p>
+
+                <hr>
+
+                <p class="pHead">Common Core Math<br>
+                    5th Grade</p>
+                <div class="listSections">Operations and Algebraic Thinking
+                    <ul class="accordionList">
+                        <li>
+                            Write and interpret numerical expressions.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="listSections"> Number and Operations in Base Ten
+                <ul class="accordionList">
+                    <li>Understand the place value system.</li>
+                    <li>Perform operations with multi-digit whole numbers and with decimals to hundredths.</li>
+                </ul>
+                </div>
+
+                <div class="listSections">Measurement and Data
+                <ul class="accordionList">
+                   <li>Represent and interpret data.</li>
+                </ul>
+                </div>
+
+                <div class="listSections">Mathematical Practices
+                   <ol class="accordionList">
+                       <li>Make sense of problems and persevere in solving them.</li>
+                       <li> Reason abstractly and quantitatively.</li>
+                <li> Construct viable arguments and critique the reasoning of others.</li>
+                <li>  Model with mathematics.</li>
+                <li> Use appropriate tools strategically.</li>
+                <li> Attend to precision.</li>
+                   </ol>
+                </div>
+
+                <hr>
+
+                <p class="pHead">National Science Content Standards <br>
+                Grades 9-12:</p>
+                    <ul class="accordionList">
+                    <li>Understandings about scientific inquiry.</li>
+                        <li>Matter, energy and organization in living systems and behavior of organisms.</li>
+                        <li>Abilities of technological design, understandings about science and technology.</li>
+                        <li>Understanding of the nature of scientific knowledge and science as a human endeavor.</li>
+                    </ul>
+
+                <hr>
+
+                <p class="pHead">Ohio Department of Education K-12
+                    Entrepreneurship Benchmarks </p>
+                <ol class="accordionList">
+                  <li>Entrepreneurs possess unique characteristics.</li>
+
+                    <li>The relationships that exist between new technologies,
+                    competition and the global economy are vital in
+                    identifying the role and importance of entrepreneurship
+                    and small business in the U.S. economy.</li>
+
+                    <li> Successful entrepreneurs understand and abide by business laws
+                    and regulations that affect operations and transactions.</li>
+
+                    <li>An entrepreneur analyzes customer groups to develop marketing
+                    plans that target specific customers.</li>
+
+                    <li>Identifying and creating a viable financial plan is
+                    essential for entrepreneurship, growth and survival.</li>
+
+                    <li>For a business to compete effectively, the entrepreneur
+                    must manage and allocate resources efficiently.</li>
+
+                    <li>Planning, organizing and directing are the key
+                    ingredients in the successful management of a business.</li>
+
+                    <li>Government regulations affect entrepreneurial ventures on
+                    various levels.</li>
+
+                    <li>A business plan is essential to justify a new business venture.</li>
+                     </ol>
+
+            </div>
+        </div>
+        <!--        end nested teacher accordion-->
+        <!--        start teacher accordion-->
+        <div class="accordion">Manufacturing Technician
+        </div>
+        <div class="accordionContent">
+            <p class="pHeadOrange">Recommended Grade Levels: 5-8
+            </p>
+
+            <div class="nestedAccordion">Tips for using the site with students
+            </div>
+
+            <div class="accordionContent">
+                <p>Before using this activity in class (or at home), go through the activity
+                    once to make sure it works correctly on your computer(s) or devices.
+                    Please be aware that this game is in HTML5, which is not stable across
+                    browsers and platforms.
+                </p>
+                <p>Your computer or devices will need to have some sort of sound output.
+                    Either speakers or headphones will work well. The majority of this
+                    activity has voice audio. We highly recommend headphones or ear
+                    buds in a classroom setting. Students with hearing impairments can
+                    read the text at the bottom of the screen. If you are having difficulty
+                    hearing the audio, check the audio settings on your computer or device.
+                </p>
+                <p>The worksheet is highly recommend for this activity and is available
+                    for <a href="/assets/Student_worksheet_MT_3_13_20.pdf" target="_blank">
+                        download</a>. If a teacher prefers not to use the worksheet,
+                    he/she should make this clear to the students, as the game refers
+                    to the worksheet numerous time.
+                </p>
+                <p>Students in the target grade-range will take approximately
+                    35 - 40 minutes to complete the entire activity.</p>
+            </div>
+
+            <div class="nestedAccordion">Assessment Tools
+            </div>
+            <div class="accordionContent">
+                <p>Teachers may want to have students put their names on the worksheets
+                    and turn them in, which should indicate if students completed the
+                    assigned activity. There is also a quiz that can be given.
+                </p>
+                <p><a href="/assets/studentWorksheet_MT.pdf" target="_blank">Student Worksheet</a><br>
+                <a href="/assets/studentQuiz_MT.pdf" target="_blank">Ten-question Quiz</a><br>
+                    <a href="assets/worksheetKey_MT" target="_blank">Key to worksheet</a><br>
+                <a href="assets/quizKey_MT.pdf" target="_blank">Key to quiz</a></p>
+            </div>
+
+            <div class="nestedAccordion">Discussion Questions
+            </div>
+            <div class="accordionContent">
+                <p>When Jerome was troubleshooting the reason the manufacturing line stopped,
+                    why did he spend so much time checking fuses, talking to Hailey and looking
+                    at the timing when he already thought it was the limit switch?</p>
+
+                   <p class="pText"> <span class="pHead">Answer:</span> Troubleshooting involves checking
+                       a variety of possibilities before narrowing in on a problem. For most companies
+                       and industries, there is almost always a recommended set of steps to figure out why
+                    something is wrong. Jerome was checking EVERYTHING to make sure that
+                    there were not multiple reasons why the line stopped, and, as he
+                    mentions several times, it’s always best to be thorough.
+                </p>
+                <p>What are some advantages to troubleshooting the way Jerome was doing it?</p>
+
+                <p class="pText"> <span class="pHead">Answer:</span> Because of Jerome’s thoroughness,
+                    he is certain that the reason the line stopped cannot be anything other than the
+                    limit switch. Also, by checking fuses, talking to Hailey, checking timing and
+                    generally taking a good look at all the pieces and parts of the line, he is able
+                    to see what might need maintaining or replacing BEFORE it stops the line and
+                    costs the company money. He can be more proactive instead of reactive in his job.
+                    He’s also able to determine if Hailey knows her job or he could recommend to her
+                    supervisor that she might need more training.
+                </p>
+                <p>If it is important to get the line started again and expensive ($3,000 - $4,000 an hour,
+                    or $50 - $66 per MINUTE the line is not working using the Edheads' figures in the game)
+                    when it stops, why did Jerome take so long to troubleshoot the problem?</p>
+
+                <p class="pText"> <span class="pHead">Answer:</span> While it may or may not have
+                    been true in this instance, Jerome and his supervisors know that skipping steps
+                    and missing problems is even more expensive in the long run. In this case, if he
+                    went straight to the limit switch and ignored timing when there really was a problem,
+                    then starting the line up again could have caused problems that impacted machinery,
+                    damaged engine blocks, or even hurt the line operators. Jerome checked everything
+                    carefully, even though it took time, so that when the line was started up again,
+                    he could be confident that everything was working at it should have been.
+                </p>
+                <p>Why does Jerome carry around a list of tolerances for various types of switches and
+                    equipment? Why would a company that produces switches even take the time to test
+                    and research that information and come up with recommended tolerances?</p>
+
+                <p class="pText"> <span class="pHead">Answer:</span>As we saw after installing
+                    the new limit switch, not everything is perfect all the time. The new switch
+                    was 5 degrees off the horizontal (the arm would only travel from 90 degrees down
+                    to 5 degrees instead of going all the way to zero degrees). It’s important when
+                    working in a manufacturing plant (or almost any job), to know what is
+                    ‘good enough’ and what is not. The new limit switch, while not perfect,
+                    is good enough to get the job done and keep the line moving. If Jerome
+                    had spent time trying to make the switch perfect (travel down to zero degrees
+                    all the time), he would have cost the company quite a bit of money without
+                    changing anything of significance. In other words, the return on that investment
+                    of time would not have been worth anything to the company and would have
+                    prevented the line from checking more engine blocks. Most careers and types
+                    of businesses have standards and/or tolerances they need to meet.
+                </p>
+                <p>Why does Jerome carry around a list of tolerances for various types of switches and
+                    equipment? Why would a company that produces switches even take the time to test
+                    and research that information and come up with recommended tolerances?</p>
+
+                <p class="pTextLast"> <span class="pHead">Answer:</span>As we saw after installing
+                    the new limit switch, not everything is perfect all the time. The new switch
+                    was 5 degrees off the horizontal (the arm would only travel from 90 degrees down
+                    to 5 degrees instead of going all the way to zero degrees). It’s important when
+                    working in a manufacturing plant (or almost any job), to know what is
+                    ‘good enough’ and what is not. The new limit switch, while not perfect,
+                    is good enough to get the job done and keep the line moving. If Jerome
+                    had spent time trying to make the switch perfect (travel down to zero degrees
+                    all the time), he would have cost the company quite a bit of money without
+                    changing anything of significance. In other words, the return on that investment
+                    of time would not have been worth anything to the company and would have
+                    prevented the line from checking more engine blocks. Most careers and types
+                    of businesses have standards and/or tolerances they need to meet.
+                </p>
+            </div>
+
+            <div class="nestedAccordion">Writing activity
+            </div>
+            <div class="accordionContent">
+                <p>Jerome was required to write a succinct summary of what occurred on
+                    section E12 of the line when it stopped, but we never saw what was in his report.
+                    Have your students summarize what happened in their own words, with a goal of
+                    being both thorough (what might other technicians need to know?) and brief,
+                    without skipping anything that might help the company. As a further extension,
+                    have them justify what they have included and what they have excluded from their summary.
+                </p>
+                <p>This activity is about manufacturing lines. People in the US don’t think about
+                    manufacturing as being a ‘good’ career choice any more, but it is a
+                    great career! Modern manufacturing is sometimes referred to as
+                    ‘skilled manufacturing.’ Assign your students a research
+                    project to determine:
+                <ul class="accordionList">
+                <li>What sorts of skills are needed on manufacturing lines today?
+                </li>
+                <li>What general types of certifications are required and how
+                    long does it take to get these certifications?
+                </li>
+                <li>What is starting pay for someone with a job like Hailey’s as a manufacturing
+                    line operator? (our research indicates over $50,000 a year with a high school diploma!)
+                </li>
+                <li>What is starting pay for someone with a job like Jerome’s as a manufacturing technician?
+                    (our research indicates over $70,000 a year with a 2 year associates degree!)
+                </li>
+                <li>Skilled manufacturing jobs exist all over the country. What are some examples
+                    of companies or plants near your school that have such jobs? What do they
+                    make and what job openings do they have right now?
+                </li>
+            </ul>
+
+                </p>
+            </div>
+            <div class="nestedAccordion">Ladder Logic Exercise
+            </div>
+            <div class="accordionContent">
+                <p>Download the <a href="/assets/ladderLogicActivity.pdf" target="_blank">ladder logic activity</a>
+                    seen in the troubleshooting section of the game. </p>
+                <p><a href src="assets/LL_activity_MT.pdf" target="_blank">Ladder Logic Exercise Key</a></p>
+                <p>Students can write out what each line of the Ladder Logic Diagram conveys or
+                    teachers can divide the class into six groups and assign each group a line of the
+                    Ladder Logic Diagram to interpret. Ladder logic diagrams are Boolean diagrams
+                    (true, not true) that indicate what is supposed to happen on a manufacturing line.
+                    This activity involves students in critical thinking and logic. Answers provided
+                    in the Forums section of this site.</p>
+
+            </div>
+            <div class="nestedAccordion">Safety, Quality and Cost
+            </div>
+            <div class="accordionContent">
+                <p>Safety, quality and cost are aspects of the manufacturing line that this company
+                    (or any manufacturing company) emphasizes almost every day with every employee.
+                    Ask your students to give you examples of each of these aspects that they
+                    saw in the game. </p>
+                <ul class="accordionList">
+                    <li><span class="pHead">Safety:</span> bump cap, flame retardant tech uniform, safety glasses are all good examples,
+                        but so are processes like lock out/tag out and checking the line before starting it.
+                    </li>
+                    <li><span class="pHead">Quality:</span> checking the measurements of the cylinders with the robot and also
+                        checking the robot’s calibration with the hand-held measuring device;
+                        also the way Jerome went about troubleshooting the problem and then
+                        fixing it – he checked everything carefully and was very thorough.
+                    </li>
+                    <li><span class="pHead">Cost:</span> Jerome and Hailey were both aware of time passing and the need to get the line
+                        moving again. This is an example of their cost awareness. They know the longer
+                        the line wasn’t working, the more expensive it got for the company. It's hard
+                        for any employee to 'see' money being wasted so some don't perceive of
+                        ‘down time’ as an expense, or don’t work hard to reduce lost time.
+                        However, those expenses are real and they get passed on to the consumer.
+                        The best employees, like Jerome and Hailey, want to insure their own
+                        success and that of the company they work for and strive to prevent and/or
+                        reduce down time whenever possible.
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="nestedAccordion">Standards
+            </div>
+            <div class="accordionContent">
+                <div class="listSections">
+                    <p class="pHead">Engineering Design</p>
+                    <p>3-5-TS1-2. Generate and compare multiple possible solutions to a problem
+                        based on how well each is likely to meet the criteria and constraints of the problem.
+                    </p>
+                    <p>3-5-ETS1-3. Plan and carry out fair tests in which variables are controlled and
+                        failure points are considered to identify aspects of a model or
+                        prototype that can be improved.
+                    </p>
+                    <p>MS-ETS1-3. Define the criteria and constraints of a design problem
+                        with sufficient precision to ensure a successful solution, taking
+                        into account relevant scientific principles and potential impacts on
+                        people and the natural environment that may limit possible solutions.
+                    </p>
+                    <p>MS-ETS1-2. Evaluate competing design solutions using a systematic process
+                        to determine how well they meet the criteria and constraints of the problem.
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="listSections">
+                        <p class="pHead">Common Core Math <br>
+                            5th Grade</p>
+
+                    <div class="listSections">Operations and Algebraic Thinking
+                        <ul class="accordionList">
+                            <li>Write and interpret numerical expressions</li>
+                        </ul>
+                    </div>
+
+                    <div class="listSections">Number and Operations in Base Ten
+                        <ul class="accordionList">
+                            <li>Understand the place value system<</li>
+                            <li>Perform operations with multi-digit whole numbers and with
+                                decimals to hundredths</li>
+                        </ul>
+                    </div>
+
+
+                    <div class="listSections">Measurement and Data
+                        <ul class="accordionList">
+                            <li>Convert like measurement units within a given measurement system</li>
+                            <li>Represent and interpret data</li>
+                        </ul>
+                    </div>
+
+                    <div class="listSections">Mathematical Practices
+                        <ol class="accordionList">
+                            <li>Make sense of problems and persevere in solving them.</li>
+                            <li>Reason abstractly and quantitatively.</li>
+                            <li>Construct viable arguments and critique the reasoning of others.</li>
+                            <li>Model with mathematics.</li>
+                            <li>Use appropriate tools strategically.</li>
+                            <li>Attend to precision.</li>
+                        </ol>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="listSections">
+                    <p class="pHead">National Science Standards <br>
+                    Content Standards Grades 9-12</p>
+                    <ul class="accordionList">
+                        <li>Understandings about scientific inquiry</li>
+                        <li>Matter, energy and organization in living systems and behavior of organisms</li>
+                        <li>Abilities of technological design, understandings about science and technology</li>
+                        <li>Natural and human-induced hazards, science and technology in local,
+                            national, and global challenges</li>
+                        <li>Understanding of the nature of scientific knowledge and science as a human endeavor</li>
+                    </ul>
+                </div>
+            </div>
+
+            </div>
+
+        <!--        end nested teacher accordion-->
+
+        <div class="accordion">Simple Machines
+        </div>
+        <div class="accordionContent">
+            <p class="pHeadOrange">Recommended Grade Levels: 2-6
+            </p>
+
+            <div class="nestedAccordion">Tips for using the site with students
+            </div>
+
+            <div class="accordionContent">
+                <p>Before using this activity in class (or at home with your kids) go
+                    through the activity once to make sure it works correctly on your computer(s).
+                </p>
+                <p>Your computer(s) will need to have some sort of sound output.
+                    Either speakers or headphones will work well.</p>
+                <p>Students in the target grade-range will take approximately eight to ten minutes
+                    per room working individually or in groups of two to three. Students seemed
+                    to spend more time and have more fun working in small groups. If time is
+                    limited, you may want to consider assigning a certain number of rooms
+                    or specific areas for the students to experience. The House is
+                    identifying simple machines and the Tool Shed is identifying the simple
+                    machines that make up compound machines.</p>
+                <hr>
+                <p>Students have the ability to print their scores
+                    after finishing all four rooms in the House and the Tool Shed.
+                    Teachers should make certain they know which printers the students’
+                    computers are set to print to.</p>
+                <hr>
+                <p>During testing, most students finished each room at roughly the same time.
+                    All the students printing at the same time could potentially back up in a
+                    very long print queue or clog the school’s network. Teachers may want to
+                    consider having students call out when they want to print, limiting the
+                    number of rooms students will print scores for or having students
+                    use multiple printers.</p>
+                <p>The purpose of the printable score sheet is to give teachers an idea
+                    of how students are performing within the site and what their knowledge
+                    level is. Many students prefer to go through a room two to three times in order
+                    to increase their scores. Teachers may choose to ask that students only print
+                    the scores from their first time through a room.
+                </p>
+                <p>After students use the site, teachers may want to discuss with their class why
+                    certain objects were simple machines. Leading questions such as “Would the fan
+                    blades work as well if they were flat instead of tilted?” will get students
+                    thinking about WHY the blades of a fan can be considered inclined planes.
+                    Many students will ask questions about the same objects and this can generate
+                    excellent classroom discussion about the characteristics of the various
+                    simple machines.</p>
+            </div>
+            <div class="nestedAccordion">Printable activities for use in class
+            </div>
+
+            <div class="accordionContent">
+                <p>These downloadable activities are in Adobe PDF Format. In order to read these
+                        files you must have Acrobat Reader which is FREE to
+                    <a href="https://get.adobe.com/reader/" target="_blank">download</a> and use.</p>
+                <p class="pHead">Pre and post Test</p>
+                   <a href="/assets/preTest_SM.pdf" target="_blank"> Download the Simple Machines Pre-Test
+                   </a><br>
+                    <a href="/assets/postTest_SM.pdf" target="_blank">Download the Simple Machines Post-test
+                    </a></p>
+
+
+            </div>
+
+
+            <div class="nestedAccordion">Standards
+            </div>
+            <div class="accordionContent">
+                <p>While the new Ohio Academic Content Standards for Science no longer specifically
+                    mention Simple Machines, there are many standards that can be met by teaching
+                    Simple Machines or using them to illustrate the various concepts outlined below.
+                    he standards below could be met or expanded upon by the Simple Machines
+                    activities on the Edheads site.</p>
+                <p class="pHead">Physical Science Standards</p>
+                <div class="listSections">Grade 1
+                <ul class="accordionList">
+                    <li>Explain or predict the motion of an object.</li>
+                    <li>Explore the effects of some objects on other objects,
+                        even when the two objects might not touch.</li>
+                    <li>Investigate a variety of ways of making things move and
+                        what causes them to change speed, direction and/or stop.</li>
+                    </ul>
+                </div>
+
+                <div class="listSections">Grade 3
+                    <ul class="accordionList">
+                        <li>Explain how objects are put into motion by pushes or pulls and
+                            the change in motion depends on the strength of the push or pull.</li>
+                    </ul>
+                </div>
+
+                <hr>
+                <p class="pHead">Science and Technology</p>
+                <div class="listSections">Grade K
+                    <ul class="accordionList">
+                        <li>Develop an understanding that the use of tools
+                            and machines can be helpful or harmful.
+                        </li>
+                        <li>Know that each kind of tool has a special purpose.</li>
+                    </ul>
+                </div>
+                <hr>
+
+                <div class="listSections">Grade 1
+                    <ul class="accordionList">
+                        <li>Know that when parts are put together they can do things that
+                            they could not do by themselves.</li>
+                        <li>Investigate that tools are used to help make things and some
+                            things cannot be made without tools.</li>
+                    </ul>
+                </div>
+
+                <div class="listSections">Grade 6</p>
+                    <ul class="accordionList">
+                <li>Know that decisions about the use of products and systems
+                    can result in desirable or undesirable consequences.</li>
+                    </ul>
+                </div>
+                <hr>
+                <p class="pHead">Scientific Inquiry</p>
+                <div class="listSections">Grade 1
+                    <ul class="accordionList">
+                        <li>Work in a small group, then share findings with others.</li>
+                    </ul>
+                </div>
+
+                <div class="listSections">Grade 1
+                    <ul class="accordionList">
+                        <li>Work in a small group, then share findings with others.</li>
+                    </ul>
+                </div>
+                <hr>
+                <p class="pHead">Scientific Ways of Knowing</p>
+                <div class="listSections">Grade K
+                    <ul class="accordionList">
+                        <li>Recognize that people are more likely to accept your ideas if you can
+                            give good reasons for them.</li>
+                    </ul>
+                </div>
+                <hr>
+                <p class="pHead">Physical Sciences</p>
+                <div class="listSections">Grade 2
+                    <ul class="accordionList">
+                        <li>Tools and machines are used to apply pushes and pulls
+                            (forces) to make things move.</li>
+                    </ul>
+                </div>
+
+                <div class="listSections">Grade 3
+                    <ul class="accordionList">
+                        <li>Machines and living things convert stored energy to motion and heat.</li>
+                    </ul>
+                </div>
+
+            </div>
+            </div>
+    </div>
+
+
+    <div class="sideBar">
+        <!--        <div class="sideBarText">Sidebar Text</div>-->
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=331605&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=596345&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+    </div>
+
+</section>
+
+<footer-component></footer-component>
+</main>
+</body>
+</html>

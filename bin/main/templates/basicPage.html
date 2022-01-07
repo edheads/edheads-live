@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Page</title>
+  <link rel="icon" href="/assets/favicon.ico">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/basicPage.css">
+  <link rel="stylesheet" href="/css/modal.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+  <script src="components/header.js" type="text/javascript" defer></script>
+  <script src="js/activeNav.js" type="text/javascript" defer></script>
+
+  <script src="js/accordion.js" type="text/javascript" defer></script>
+  <script src="js/modal.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+<body>
+<header-component></header-component>
+<main>
+
+
+<section id="basicPageContainer">
+
+  <div class="basicPageContentContainer">
+
+    <div class="navTest" style="margin-left: 2rem;">
+
+      <ul class="mainNav">
+        <li class="mainNavItem active"><a href="#">One</a></li>
+        <li class="mainNavItem"><a href="#">Two</a></li>
+        <li class="mainNavItem"><a href="#">Three</a></li>
+      </ul>
+    </div>
+
+
+    <div class="basicPageMain">
+      <h1>Basic Page</h1>
+      <div class="basicPageContent">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Etiam tristique, ex ut tincidunt ullamcorper, sapien lorem viverra eros, ac lobortis massa
+          risus ut massa.</p>
+      </div>
+    </div>
+
+    <div class="accordion">Accordion Title
+    </div>
+    <div class="accordionContent">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam tristique, ex ut tincidunt ullamcorper, sapien lorem viverra eros, ac lobortis massa
+        risus ut massa.
+      <hr>
+      </p>
+
+
+      <div class="nestedAccordion">Nested Accordion Title
+      </div>
+
+      <div class="accordionContent">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Etiam tristique, ex ut tincidunt ullamcorper, sapien lorem viverra eros, ac lobortis massa
+          risus ut massa.
+        </p>
+      </div>
+    </div>
+
+
+
+    <div class="accordion">Accordion Two Column
+    </div>
+    <div class="accordionContentTwoColumn">
+      <div class="accordionColumns">
+        <div class="columnLeft">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Etiam tristique, ex ut tincidunt ullamcorper, sapien lorem viverra eros, ac lobortis massa
+            risus ut massa.
+          </p>
+        </div>
+        <div class="columnRight">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Etiam tristique, ex ut tincidunt ullamcorper, sapien lorem viverra eros, ac lobortis massa
+            risus ut massa.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div id="modalTrigger">i</div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="close">X</div>
+
+        <p class="modalP">A modal is a great way to provide user information without
+          going to a new page.</p>
+      </div>
+
+    </div>
+<!--   end modal-->
+
+
+  </div>
+
+  <div class="sideBar">
+    <!--        <div class="sideBarText">Sidebar Text</div>-->
+    <div>
+      <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">
+    </div>
+
+    <div>
+      <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">
+    </div>
+  </div>
+
+</section>
+<footer-component></footer-component>
+</main>
+</body>
+</html>

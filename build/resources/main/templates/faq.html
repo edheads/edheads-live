@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <meta charset="UTF-8">
+    <title>Frequently Asked Questions</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/faq.css">
+
+
+    <script src="components/header.js" type="text/javascript" defer></script>
+    <script src="js/accordion.js" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '387795396444479');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=387795396444479&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+</head>
+<body>
+<div class="stickyHeader">
+    <header>
+        <div class="headerContents">
+            <div class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem"><a href="/donate">Donate</a></li>
+                    <li class="topNavItem"><a href="/login">Log In</a></li>
+                    <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+            </div>
+
+            <div class=""> </div>
+
+            <div class="mainNavContainer">
+                <ul class="mainNav">
+                    <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
+                    <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+                    <li class="mainNavItem active"><a href="/about-us">About Us</a></li>
+                    <li class="mainNavItem"><a href="/our-games">Our Games</a></li>
+                    <li class="mainNavItem"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+                    <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+                </ul>
+                <div class="logoWG">
+                    <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+                </div>
+            </div>
+        </div>
+    </header>
+        <div class="secondaryNavContainer">
+            <ul class="secondaryNav">
+                <li class="secondaryNavItem active"><a href="/faq">FAQ's</a></li>
+                <li class="secondaryNavItem"><a href="/awards">Awards</a></li>
+                <li class="secondaryNavItem"><a href="/privacy">Privacy</a></li>
+                <li class="secondaryNavItem"><a href="/terms-of-use">Terms of Use</a></li>
+                <li class="secondaryNavItem"><a href="/activity-help">Activity Help</a></li>
+            </ul>
+        </div>
+</div>
+
+<main>
+
+<section id="faqContainer">
+    <div class="faqContentContainer">
+        <h1>Frequently Asked Questions</h1>
+
+
+        <h2 class="accordion">What is Edheads?</h2>
+        <div class="accordionContent">
+            <p>Edheads is a free, online educational resource providing science and
+                math games and activities, inspiring K-12 students to pursue careers in STEM.
+                More than 12 million people a year use our services to learn about and explore
+                the fields of science, technology, engineering, math, and STEM careers.</p>
+
+            <p>Because Edheads in a non-profit organization, we rely on donations
+                and volunteers to help us accomplish our mission. Please consider
+                donating or volunteering with Edheads. Check out our listings
+                on VolunteerMatch or contact us at
+                <a href = "mailto: info@edheads.org">info@edheads.org</a>.
+            </p>
+
+
+        </div>
+        <h2 class="accordion">What can I do at Edheads?</h2>
+        <div class="accordionContent">
+            <p>
+                You can check out our activities! Currently,
+                we have the following activities available:
+            </p>
+            <p class="gameTitle">Simple Machines</p>
+                <p class="gameInfo">Grade Level: 2-6<br>
+                Topics Covered: Identification of simple and compound machines</p>
+            <p class="gameTitle">Manufacturing Technician</p>
+            <p class="gameInfo">Grade Level: 5-8<br>
+                Topics Covered: Percentages, estimates, measuring, logic.</p>
+            <p class="gameTitle">Nano Start Up</p>
+            <p class="gameInfo">Grade Level: 5-8<br>
+                Topics Covered: Percentages, budgeting, critical thinking.</p>
+        </div>
+
+        <div class="accordion">Why do some activities take a long time to download?
+        </div>
+        <div class="accordionContent">
+           <p>Our activities have cool graphics, great sound, and a ton of animations,
+               so the size of some activities can be pretty big. This means activities
+               will take longer to download if you have a slower connection.
+           </p>
+        </div>
+
+        <div class="accordion">What if I see an objectionable advertisement?
+        </div>
+        <div class="accordionContent">
+            <p>Please copy the web address on the ad and send it to us at
+                <a href = "mailto: info@edheads.org">info@edheads.org</a>.
+                We make every effort to keep objectionable material
+                off the Edheads website and appreciate reports that help us keep the
+                site appropriate for all ages.
+            </p>
+        </div>
+
+        <div class="accordion">What if I have an idea for a new activity?
+        </div>
+        <div class="accordionContent">
+            <p>Please e-mail us with your ideas!  We can be reached at
+                <a href = "mailto: info@edheads.org">info@edheads.org</a>.
+                We can't guarantee we'll turn your idea into reality,
+                but we do listen and we do make every attempt to accommodate our users.
+                All ideas must be funded, though, and we cannot promise that every idea
+                will become a successful fundraising proposal.
+
+            </p>
+        </div>
+
+        <div class="accordion">How did Edheads get started?
+        </div>
+        <div class="accordionContent">
+            <p>
+                Eric Bort and Gail Wheatley started Edheads.
+                They met in early 2000 through a mutual friend,
+                Eric and Gail had a long brainstorming session
+                about how the Internet should really be used to educate.
+                But it would take some time before the first grant came in
+                and the first activity,Simple Machines, would launch.
+                Today, Eric runs his own company and Gail oversees the
+                Edheads operation, along with a  fabulous Board of Directors
+                and a bunch of super cool volunteers.
+            </p>
+        </div>
+
+
+        <div class="accordion">Where do you get  your ideas?
+        </div>
+        <div class="accordionContent">
+            <p>Our ideas come from a lot of places. Sometimes our users write in with
+            ideas of activities they'd like to see
+            (and no, sorry, we won't be producing things where
+            hundreds of knee patients die violent deaths or you
+            win by just having better eye-hand coordination than someone else)
+            or scientists, corporations, and teachers give us ideas. </p>
+            <p>We also have a LOT of ideas of our own! We get ideas from the
+                news of the day and the exciting areas of research that are making headlines.
+                So, we are pretty open to ideas and there is no shortage of them.
+                The challenge is to come up with ideas and get those  ideas funded.</p>
+        </div>
+
+        <div class="accordion">Who can I write to if I have specific questions or concerns?
+        </div>
+        <div class="accordionContent">
+            <p>E-mail <a href = "mailto: info@edheads.org">info@edheads.org</a> for graphic, technical,
+                sponsorship, educational, business, fundraising practices,
+                and partnerships concerns, comments, or questions.
+                Or, well, really anything else you can think of, too.</p>
+        </div>
+
+        <div class="accordion">Who builds this stuff?
+        </div>
+        <div class="accordionContent">
+            <p>Lots of different people! We work with teachers, kids,
+                designers, writers and many others to create the full
+                Edheads experience! If you would like to partner with us to
+                develop new projects, please contact
+                <a href = "mailto: info@edheads.org">info@edheads.org</a> .</p>
+        </div>
+   </div>
+
+
+    <div class="sideBarSubNav">
+        <!--        <div class="sideBarText">Sidebar Text</div>-->
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=331605&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=596345&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+    </div>
+
+</section>
+<footer-component></footer-component>
+</main>
+</body>
+</html>

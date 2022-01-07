@@ -1,0 +1,108 @@
+.closeForm a{
+    color: #cbd543;
+    font-size: 3rem;
+    font-weight: 100;
+    float: right;
+
+}
+
+.closeForm a:hover,
+.closeForm a:focus {
+    color: #474747;
+}
+
+.signUpContainer {
+    margin: 3rem auto;
+    width: 80%;
+}
+
+.signUpPageContent {
+    padding: 2rem;
+}
+
+.signUpTitle{
+    font-size: 3rem;
+    margin: 3rem;
+    text-align: center;
+}
+
+.createAccountTitle{
+    margin: 2rem 0;
+    text-align: center;
+}
+
+::placeholder {
+    color: #2cccd3;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+
+.formLabel{
+    padding-left: 1.25rem ;
+    padding-right: 2rem;
+}
+
+.dropdown{
+    margin: 1rem 0 1rem 0;
+}
+
+.form-control{
+    border: solid .25rem #2cccd3;
+    border-radius: .5rem;
+    color: #d1a10e;
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 1rem;
+    width: 100%;
+}
+
+.form-control-readonly{
+    display: inline;
+    border: none;
+    border-radius: .5rem;
+    color: #cbd543;
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 1rem;
+    width: 100%;
+}
+
+.accountRowOne, .accountRowTwo{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.questionsRowTwo, .questionsRowThree{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem 0 1rem;
+}
+
+.signUpButton{
+    background-color: #4a86c2;
+    border: none;
+    border-radius: .75rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.25rem;
+    padding: 1rem 3rem;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logInLink{
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+

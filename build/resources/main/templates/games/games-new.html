@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Edheads</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/form.css">
+
+</head>
+<body>
+<section id="basicPageContainer">
+    <div class="signUpContainer">
+        <div class="basicPageMain">
+
+            <div class="closeForm"><a href="/welcome">X</a></div>
+
+            <div class="signUpPageContent">
+                <div class="container text-center">
+
+                    <div>
+                        <h1 class="signUpTitle">New Game</h1>
+                    </div>
+
+                    <form th:action="@{/games}" th:object="${game}"
+                          method="post"
+                          enctype="multipart/form-data">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                        <div class="m-3">
+                            <h2 class="createAccountTitle">Add Game Details</h2>
+                        </div>
+
+                        <div class="accountRowOne">
+                            <div class="gameTitle">
+                                <input type="text" placeholder="Game Title"   th:field="*{gameTitle}"
+                                       class="form-control"
+                                       required minlength="1" maxlength="50" />
+                            </div>
+
+                            <div class="targetGradeRange">
+                                <input type="text" placeholder="Target Grade Range"  th:field="*{targetGradeRange}"
+                                       class="form-control"
+                                       required minlength="1" maxlength="50" />
+                            </div>
+                        </div>
+
+                        <div class="gameDescription">
+                                    <textarea type="text" placeholder="Game Description"
+                                              th:field="*{gameDescription}" class="form-control" required></textarea>
+                        </div>
+
+                        <div class="gameLink">
+                            <input type="text"  placeholder="Unique identifier with no spaces (ex: simple-machines)" th:field="*{gameLink}"
+                                   class="form-control"
+                                   required minlength="1" maxlength="50" />
+                        </div>
+
+                        <div class="launchLink">
+                            <input type="text" placeholder="Link to launch game"  th:field="*{launchLink}"
+                                   class="form-control"
+                                   required minlength="1" maxlength="50" />
+                        </div>
+                        <div class="gameImage">
+                            <label path="gameImage">Please upload the primary image for this game.</label>
+                            <input type="file" name="gameImage">
+                        </div>
+                        <div class="playImage">
+                            <label path="playImage">Please upload the "play" image for this game.</label>
+                            <input type="file" name="playImage">
+                        </div>
+
+                        <div class="buttonContainer">
+                            <button type="submit" class="signUpButton">Submit</button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

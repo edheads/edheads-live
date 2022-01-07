@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+    <meta charset="UTF-8">
+    <title>Simple Machines</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/singleGameView.css">
+
+
+    <script src="/js/game.js" defer></script>
+    <script src="/js/accordion.js" defer></script>
+    <script src="/components/footer.js" type="text/javascript" defer></script>
+
+</head>
+<body>
+<div class="stickyHeader">
+    <header>
+        <div class="headerContents">
+            <div sec:authorize="!isAuthenticated()" class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem"><a href="/donate">Donate</a></li>
+                    <li class="topNavItem"><a href="/login">Log In</a></li>
+                    <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+                </ul>
+            </div>
+            <div sec:authorize="isAuthenticated()" class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem">
+                        <form name='logout' th:action="@{/logout}" method='post'>
+                            <button class="topNavItem" type="submit">Log Out</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+            </div>
+
+            <div class=""> </div>
+
+            <div class="mainNavContainer">
+                <ul class="mainNav">
+                    <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
+                    <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+                    <li class="mainNavItem"><a href="/about-us">About Us</a></li>
+                    <li class="mainNavItem active"><a href="/our-games">Our Games</a></li>
+                    <li class="mainNavItem"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+                    <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+                </ul>
+                <div class="logoWG">
+                    <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+<main>
+
+
+    <section th:each="game: ${games}" id="singleGameContainer">
+
+        <div class="singleGameContentContainer">
+            <div class="backNav"><a href="/our-games">Back to Games</a> </div>
+
+            <h1 th:text="${game.gameTitle}"></h1>
+
+            <div class="gameImageContainer">
+
+                <a th:href="@{/{link}(link=${game.launchLink})}" th:onclick="@{return openwindow('{link}')(link=${game.launchLink})}">
+                    <img th:src="@{/assets/{img}(img=${game.gameImage})}" th:alt="${game.gameTitle}" class="gameImg">
+                </a>
+                <div class="sponsorTag">
+                    <a href="/get-involved"> Sponsor This Game!</a>
+                </div>
+            </div>
+
+            <div class="singleGameContent">
+                <p class="pHead" th:text="@{Grades: {grades}(grades=${game.targetGradeRange})}"></p>
+                <p th:text="${game.gameDescription}"></p>
+            </div>
+
+            <!--    <div class="sponsorContainer">-->
+            <!--      <div class="sponsorContent"> LOGO WILL HERE</div>-->
+            <!--    </div>-->
+
+
+            <div class="accordion">Glossary of Terms
+            </div>
+            <div class="accordionContent">
+                <p class="pHead">Compound Machine</p>
+                <p class="pText">Two or more simple machines working together to make work easier.</p>
+                <p>Examples:Wheelbarrow, Can Opener, Bicycle</p>
+            </div>
+
+            <div class="accordion">Credits and Thanks
+            </div>
+            <div class="accordionContentTwoColumn">
+                <div class="accordionColumns">
+
+                    <div class="columnLeft">
+                        <p>Logo will go here</p>
+                        <p class="pHead">Funding by Martha Holden <br> Jennings Foundation
+                        </p>
+                    </div>
+
+                    <div class="columnRight">
+                        <p class="pHead">Project Production and Development
+                        </p>
+                        <p class="accordionListTitle">Project Director: Gail Wheatley
+                        <ul class="accordionList">
+                            <li>Research</li>
+                            <li>Project Organization</li>
+                            <li>Grant Preparation</li>
+                            <li>Activity Ideas & Concepts</li>
+                        </ul>
+                        </p>
+                        <p class="accordionListTitle">Creative Director: Eric Bort
+                        <ul class="accordionList">
+                            <li>Activity, Web & Print Design</li>
+                            <li>Programming</li>
+                            <li>Script Writing</li>
+                            <li>Voice and Audio</li>
+                        </ul>
+                        </p>
+                        <p>Conceptual room designs: Steve Galgas</p>
+                        <p>Science Editing: Steve Whitt</p>
+                        <p>Text Editing: Heather Evans</p>
+                    </div>
+                </div>
+            </div>
+
+            <div th:if="'Admin' == ${role}">
+                <h2>Admin-view Only</h2>
+                <div class="buttonContainer">
+                    <a th:href="@{/games/{gameLink}/edit(gameLink=${game.gameLink})}">
+                        <button type="submit" class="editButton">Edit Game</button>
+                    </a>
+                    <form th:action="@{/games/{$gameid}/delete(gameid=${game.id})}" th:object="${game}" method="post">
+                        <button type="submit" class="deleteButton">Delete Game</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sideBar">
+            <!--        <div class="sideBarText">Sidebar Text</div>-->
+            <div class="sideBarAd">
+                <script src="//ap.lijit.com/www/delivery/fpi.js?z=331605&width=300&height=250"></script>
+                <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+            </div>
+
+            <div class="sideBarAd">
+                <script src="//ap.lijit.com/www/delivery/fpi.js?z=596345&width=300&height=250"></script>
+                <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+            </div>
+
+            <div sec:authorize="isAuthenticated()" class="buttonContainer">
+                <a href="/welcome">View Teacher Resources</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer-component></footer-component>
+</main>
+</body>
+</html>
