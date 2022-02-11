@@ -3,15 +3,12 @@ package com.example.demo.controllers;
 
 import com.example.demo.models.CustomUserDetails;
 import com.example.demo.models.Game;
-import com.example.demo.models.User;
 import com.example.demo.repositories.GameRepository;
 import com.example.demo.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -39,11 +36,6 @@ public class GamesRestController {
     GameRepository gameRepo;
 
     //INDEX
-//    @RequestMapping(value="/games")
-//    public Collection<Game> getAllGames(Model model) {
-//        return (Collection<Game>) gameRepo.findAll();
-//    }
-
     @RequestMapping(value="/games")
     public ModelAndView getAllGames(Model model) {
         String role = getLoggedInUserRole();
@@ -79,22 +71,6 @@ public class GamesRestController {
     }
 
     //NEW (submit)
-//    @PostMapping("/games")
-//    public String addGame(@ModelAttribute Game gameToAdd) throws IOException {
-//        String role = getLoggedInUserRole();
-//
-//        Game newGame = new Game(
-//                gameToAdd.getGameTitle(),
-//                gameToAdd.getGameDescription(),
-//                gameToAdd.getTargetGradeRange(),
-//                gameToAdd.getGameLink(),
-//                gameToAdd.getLaunchLink()
-//        );
-//
-//        gameRepo.save(newGame);
-//        return "/games/games-index"; //(Collection<Game>) gameRepo.findAll();
-//    }
-
     @PostMapping("/games")
     public String addGame(@ModelAttribute("game") Game game, @RequestParam MultipartFile gameImage, @RequestParam MultipartFile playImage) {
 

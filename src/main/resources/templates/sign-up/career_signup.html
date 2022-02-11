@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Sign Up</title>
+    <title>Edheads</title>
     <link rel="icon" href="/assets/favicon.ico">
 
     <link rel="stylesheet" href="/css/main.css">
@@ -18,7 +18,7 @@
     <div class="signUpContainer">
         <div class="basicPageMain">
 
-            <div class="closeForm"><a href="/welcome">X</a></div>
+            <div class="closeForm"><a href="javascript:history.back()">X</a></div>
 
             <div class="signUpPageContent">
                 <div class="container text-center">
@@ -33,7 +33,13 @@
 
                         <div class="m-3">
                             <h2 class="createAccountTitle">Create Your Account</h2>
-                            <p>Please note: Professional profiles require review by Edheads prior to being available to view on the site.</p>
+                            <p> Please define all professional-level vocabulary. </p>
+                            <p> The Professional profile takes about 20 minutes to complete.
+                                You may submit your account login information now, and then edit your profile to complete the full form at a later time. </p>
+                            <p> However, please note that the profile will not be posted for public viewing until all questions are answered
+                                AND an Edheads admin has reviewed it.  Once the review is complete, we will email you with any suggestions to make the profile
+                                more understandable to younger students or post it. </p>
+                                <p> Thank you for joining the Edheads' Professional Database!</p>
                         </div>
 
                         <div class="accountRowOne">
@@ -63,14 +69,6 @@
                             </div>
                         </div>
 
-
-                        <h2 class="createAccountTitle">Please upload a primary image for your profile.</h2>
-                        <p>*Accepted file formats: .png, .jpeg, .gif</p>
-                        <div class="file">
-                            <label path="profileImage">Profile image:</label>
-                            <input type="file" name="file" accept="image/png, image/gif, image/jpeg">
-                        </div>
-
                         <h2 class="createAccountTitle">Please tell us more about yourself.</h2>
 
                         <div class="questionsRowOne">
@@ -87,91 +85,80 @@
                         <div class="company">
                                         <textarea type="text" placeholder="Company"
                                                   th:field="*{company}" class="form-control" maxlength="50"
-                                                  required></textarea>
+                                                  ></textarea>
                         </div>
 
                         <div class="university">
                                         <textarea type="text" placeholder="University/College"
                                                   th:field="*{university}" class="form-control" maxlength="50"
-                                                  required></textarea>
+                                                  ></textarea>
                         </div>
 
                         <div class="careerTitle">
                                         <textarea type="text" placeholder="What is your job title? (generic preferred)"
                                                   th:field="*{careerTitle}" class="form-control" maxlength="50"
-                                                  required></textarea>
+                                                  ></textarea>
                         </div>
 
                         <div class="careerDescription">
                                     <textarea type="text"
                                               placeholder="Please provide summary of your research or job. What is an average day like or duties performed?"
                                               th:field="*{careerDescription}" class="form-control" maxlength="5000"
-                                              required></textarea>
+                                              ></textarea>
                         </div>
 
                         <div class="educationDescription">
                                     <textarea type="text"
                                               placeholder="What is your education background and what prompted you to go in this career direction?"
                                               th:field="*{educationDescription}" class="form-control" maxlength="1000"
-                                              required></textarea>
+                                              ></textarea>
                         </div>
 
                         <div class="careerPathChallenge">
                                     <textarea type="text"
                                               placeholder="What have you struggled with or overcome in your educational or life path to your current job?"
                                               th:field="*{careerPathChallenge}" class="form-control" maxlength="2000"
-                                              required></textarea>
+                                              ></textarea>
                         </div>
 
                         <div class="jobBestDescription">
                                     <textarea type="text" placeholder="What is the best part of your research/job?"
                                               th:field="*{jobBestDescription}" class="form-control" maxlength="1000"
-                                              required></textarea>
+                                              ></textarea>
                         </div>
 
                         <div class="jobWorstDescription">
                                     <textarea type="text"
                                               placeholder="What is the most challenging/difficult part of your research/job? (please make sure it is related to the actual job function and not the workplace)"
                                               th:field="*{jobWorstDescription}" class="form-control" maxlength="1000"
-                                              required></textarea>
+                                              ></textarea>
                         </div>
 
                         <div class="jobExcitingDescription">
                                     <textarea type="text" placeholder="What is the most exciting part of your job?"
                                               th:field="*{jobExcitingDescription}" class="form-control" maxlength="1000"
-                                              required></textarea>
+                                              ></textarea>
                         </div>
 
                         <div class="memorableCareerMoment">
                                     <textarea type="text" placeholder="What is your most memorable career-related moment?"
                                               th:field="*{memorableCareerMoment}" class="form-control" maxlength="1000"
-                                              required></textarea>
+                                              ></textarea>
                         </div>
 
                         <div class="pastChangeDesc">
                                     <textarea type="text"
                                               placeholder="What has changed about your profession in the past ten years?"
                                               th:field="*{pastChangeDesc}" class="form-control" maxlength="1000"
-                                              required></textarea>
+                                              ></textarea>
                         </div>
 
                         <div class="futureChangeDesc">
                                     <textarea type="text"
                                               placeholder="What do you think will change in the next 10 years?"
                                               th:field="*{futureChangeDesc}" class="form-control" maxlength="1000"
-                                              required></textarea>
+                                              ></textarea>
                         </div>
-
-                        <h2 class="createAccountTitle">Please upload 3-5 images related to your career or industry.</h2>
-                        <p>*Accepted file formats: .png, .jpeg, .gif</p>
-                        <div class="file">
-                            <label path="careerImages">For example, any pictures of you doing field work, lab work, or
-                                an interesting activity related to the topic covered in your profile.
-                                Or images of graphs, charts, etc. that support your job/research summary would also be
-                                suitable.</label>
-                            <input type="file" name="files" mutiple accept="image/png, image/gif, image/jpeg">
-                        </div>
-
 
                         <h2 class="createAccountTitle">Additional Information (this information will NOT be visible on
                             the website and will not be shared with anyone outside of Edheads):</h2>
@@ -190,7 +177,7 @@
                         <p>Would you be willing to help Edheads with game concepts related to your career? (A game
                             concept takes 1.5-3 hours of your time to produce.)</p>
                         <div>
-                            <input type="radio" id="gameHelpYes" name="gameHelpInd" value="true">
+                            <input type="radio" id="gameHelpYes" name="gameHelpInd" value="true" required>
                             <label for="gameHelpYes">Yes</label>
                         </div>
                         <div>
@@ -201,36 +188,42 @@
                         <p>Would you be willing to approach your company about funding for Edheads games, operation
                             support, or a specific game concept we have worked on together?</p>
                         <div>
-                            <input type="radio" id="fundingYes" name="gameFundingInd" value="true">
+                            <input type="radio" id="fundingYes" name="gameFundingInd" value="true" required>
                             <label for="fundingYes">Yes</label>
                         </div>
                         <div>
-                            <input type="radio" id="fundingNo" name="gameFundingInd" value="false">
+                            <input type="radio" id="fundingNo" name="gameFundingInd" value="false" required>
                             <label for="fundingNo">No</label>
                         </div>
 
                         <p>Would you be willing to interact with teachers and students through Edheads' social
                             media?</p>
                         <div>
-                            <input type="radio" id="socialMediaYes" name="socialMediaInd" value="true">
+                            <input type="radio" id="socialMediaYes" name="socialMediaInd" value="true" required>
                             <label for="socialMediaYes">Yes</label>
                         </div>
                         <div>
-                            <input type="radio" id="socialMediaNo" name="socialMediaInd" value="false">
+                            <input type="radio" id="socialMediaNo" name="socialMediaInd" value="false" required>
                             <label for="socialMediaNo">No</label>
                         </div>
 
                         <p>Would you be willing to volunteer for Edheads brainstorming sessions or events?</p>
                         <div>
-                            <input type="radio" id="volunteerYes" name="volunteerInd" value="true">
+                            <input type="radio" id="volunteerYes" name="volunteerInd" value="true" required>
                             <label for="volunteerYes">Yes</label>
                         </div>
                         <div>
-                            <input type="radio" id="volunteerNo" name="volunteerInd" value="false">
+                            <input type="radio" id="volunteerNo" name="volunteerInd" value="false" required>
                             <label for="volunteerNo">No</label>
                         </div>
                         <div class="buttonContainer">
-                            <p>Please note: Professional profiles require review by Edheads prior to being available to view on the site.</p>
+                            <p> Please define all professional-level vocabulary. </p>
+                            <p> The Professional profile takes about 20 minutes to complete.
+                                You may submit your account login information now, and then edit your profile to complete the full form at a later time. </p>
+                            <p> However, please note that the profile will not be posted for public viewing until all questions are answered
+                                AND an Edheads admin has reviewed it.  Once the review is complete, we will email you with any suggestions to make the profile
+                                more understandable to younger students or post it. </p>
+                            <p> Thank you for joining the Edheads' Professional Database!</p>
                             <button type="submit" class="signUpButton">Sign Up</button>
                             <div class="logInLink">Already a member?
                                 <a href="/login">

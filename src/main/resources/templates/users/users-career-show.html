@@ -21,23 +21,19 @@
                 <div class="container text-center">
 
                     <div>
-                        <h1 class="signUpTitle">Edit STEM Professional</h1>
+                        <h1 class="signUpTitle">My Profile</h1>
                     </div>
-                    <form th:action="@{/stem-careers/delete-user}" th:object="${user}"
-                          method="post">
-                        <input type="hidden" th:field="*{id}">
-                        <div class="buttonContainer">
-                            <button type="submit" class="deleteButton">Delete User</button>
-                        </div>
-                    </form>
+                    <div th:object="${user}">
 
-                    <form th:action="@{/stem-careers/edit}" th:object="${user}"
-                          method="post">
+                        <div class="buttonContainer">
+                            <a href="/user/edit">
+                                <button class="signUpButton">Edit Profile</button>
+                            </a>
+                        </div>
 
                         <div class="accountRowOne">
                             <input type="hidden" th:field="*{id}">
                             <input type="hidden" th:field="*{role}">
-                            <input type="hidden" th:field="*{privileges}">
                             <input type="hidden" th:field="*{city}">
                             <input type="hidden" th:field="*{state}">
                             <input type="hidden" th:field="*{dateCreated}">
@@ -45,21 +41,18 @@
                             <input type="hidden" th:field="*{gameFundingInd}">
                             <input type="hidden" th:field="*{socialMediaInd}">
                             <input type="hidden" th:field="*{volunteerInd}">
-                            <input type="hidden"   th:field="*{approvedByAdmin}">
+                            <input type="hidden" th:field="*{approvedByAdmin}">
                         </div>
 
-                            <input  class="form-control-readonly"th:field="*{firstName}" readonly>
-                            <input  class="form-control-readonly" th:field="*{lastName}" readonly>
+                        <input class="form-control-readonly" th:field="*{firstName}" readonly>
+                        <input class="form-control-readonly" th:field="*{lastName}" readonly>
 
-                        <div class="keywords">
-                            <p>Keywords:</p>
-                            <textarea type="text"
 
-                                      th:field="*{keywords}" class="form-control" maxlength="1000"
-                            ></textarea>
+                        <div class="buttonContainer">
+                            <a th:href="@{/user/upload?position=Profile}">
+                                <button class="signUpButton">Change Profile Picture</button>
+                            </a>
                         </div>
-
-                        <h2 class="createAccountTitle">Profile Image</h2>
                         <div th:each="image : ${images}">
                             <div th:if="${image.imagePosition == 'Profile'}">
                                 <div th:if="${image?.displayData.toString() != null}">
@@ -76,87 +69,129 @@
                             </div>
                         </div>
 
-                        <h2 class="createAccountTitle">Professional Details</h2>
-
                         <div class="company">
-                                        <textarea type="text" placeholder="Company"
-                                                  th:field="*{company}" class="form-control" maxlength="50"
-                                                  ></textarea>
+                            Company
+                                        <textarea type="text" placeholder="No answer"
+                                                  th:field="*{company}" class="form-control-readonly" maxlength="50"
+                                                  readonly></textarea>
                         </div>
+
 
                         <div class="university">
-                                        <textarea type="text" placeholder="University/College"
-                                                  th:field="*{university}" class="form-control" maxlength="200"
-                                                  ></textarea>
+                            University/College
+                                        <textarea type="text" placeholder="No answer"
+                                                  th:field="*{university}" class="form-control-readonly" maxlength="200"
+                                                  readonly></textarea>
                         </div>
+
 
                         <div class="careerTitle">
-                                        <textarea type="text" placeholder="What is your job title? (generic preferred)"
-                                                  th:field="*{careerTitle}" class="form-control" maxlength="100"
-                                                  ></textarea>
+                            What is your job title? (generic preferred)
+                                        <textarea type="text" placeholder="No answer"
+                                                  th:field="*{careerTitle}" class="form-control-readonly"
+                                                  maxlength="100"
+                                                  readonly></textarea>
                         </div>
+
 
                         <div class="careerDescription">
+                            Please provide summary of your research or job. What is an average day like or duties performed?
                                     <textarea type="text"
-                                              placeholder="Please provide summary of your research or job. What is an average day like or duties performed?"
-                                              th:field="*{careerDescription}" class="form-control" maxlength="5000"
-                                              ></textarea>
+                                              placeholder="No answer"
+                                              th:field="*{careerDescription}" class="form-control-readonly"
+                                              maxlength="5000"
+                                              readonly></textarea>
                         </div>
+
 
                         <div class="educationDescription">
+                            Please provide summary of your research or job. What is an average day like or duties performed?
                                     <textarea type="text"
-                                              placeholder="What is your education background and what prompted you to go in this career direction?"
-                                              th:field="*{educationDescription}" class="form-control" maxlength="1000"
-                                              ></textarea>
+                                              placeholder="No answer"
+                                              th:field="*{educationDescription}" class="form-control-readonly"
+                                              maxlength="1000"
+                                              readonly></textarea>
                         </div>
+
 
                         <div class="careerPathChallenge">
+                            What have you struggled with or overcome in your educational or life path to your current job?
                                     <textarea type="text"
-                                              placeholder="What have you struggled with or overcome in your educational or life path to your current job?"
-                                              th:field="*{careerPathChallenge}" class="form-control" maxlength="2000"
-                                              ></textarea>
+                                              placeholder="No answer"
+                                              th:field="*{careerPathChallenge}" class="form-control-readonly"
+                                              maxlength="2000"
+                                              readonly></textarea>
                         </div>
+
 
                         <div class="jobBestDescription">
-                                    <textarea type="text" placeholder="What is the best part of your research/job?"
-                                              th:field="*{jobBestDescription}" class="form-control" maxlength="1000"
-                                              ></textarea>
+                            What is the best part of your research/job?
+                                    <textarea type="text" placeholder="No answer"
+                                              th:field="*{jobBestDescription}" class="form-control-readonly"
+                                              maxlength="1000"
+                                              readonly></textarea>
                         </div>
 
+
                         <div class="jobWorstDescription">
+                            What is the most challenging/difficult part of your research/job? (please make sure it is
+                            related to the actual job function and not the workplace)
                                     <textarea type="text"
-                                              placeholder="What is the most challenging/difficult part of your research/job? (please make sure it is related to the actual job function and not the workplace)"
-                                              th:field="*{jobWorstDescription}" class="form-control" maxlength="1000"
-                                              ></textarea>
+                                              placeholder="No answer"
+                                              th:field="*{jobWorstDescription}" class="form-control-readonly"
+                                              maxlength="1000"
+                                              readonly></textarea>
                         </div>
 
                         <div class="jobExcitingDescription">
-                                    <textarea type="text" placeholder="What is the most exciting part of your job?"
-                                              th:field="*{jobExcitingDescription}" class="form-control" maxlength="1000"
-                                              ></textarea>
+                            What is the most exciting part of your job?
+                                    <textarea type="text" placeholder="No answer"
+                                              th:field="*{jobExcitingDescription}" class="form-control-readonly"
+                                              maxlength="1000"
+                                              readonly></textarea>
                         </div>
 
                         <div class="memorableCareerMoment">
-                                    <textarea type="text" placeholder="What is your most memorable career-related moment?"
-                                              th:field="*{memorableCareerMoment}" class="form-control" maxlength="1000"
-                                              ></textarea>
+                            What is your most memorable career-related moment?
+                                    <textarea type="text" placeholder="No answer"
+                                              th:field="*{memorableCareerMoment}" class="form-control-readonly"
+                                              maxlength="1000"
+                                              readonly></textarea>
                         </div>
+
 
                         <div class="pastChangeDesc">
+                            What has changed about your profession in the past ten years?
                                     <textarea type="text"
-                                              placeholder="What has changed about your profession in the past ten years?"
-                                              th:field="*{pastChangeDesc}" class="form-control" maxlength="1000"
-                                              ></textarea>
+                                              placeholder="No answer"
+                                              th:field="*{pastChangeDesc}" class="form-control-readonly"
+                                              maxlength="1000"
+                                              readonly></textarea>
                         </div>
+
 
                         <div class="futureChangeDesc">
+                            What do you think will change in the next 10 years?
                                     <textarea type="text"
-                                              placeholder="What do you think will change in the next 10 years?"
-                                              th:field="*{futureChangeDesc}" class="form-control" maxlength="1000"
-                                              ></textarea>
+                                              placeholder="No answer"
+                                              th:field="*{futureChangeDesc}" class="form-control-readonly"
+                                              maxlength="1000"
+                                              readonly></textarea>
                         </div>
 
-                        <h2 class="createAccountTitle">Career-Related Images</h2>
+
+                        <h2 class="createAccountTitle">Please upload 3-5 images related to your career or industry.</h2>
+                        <p>*Accepted file formats: .png, .jpeg, .gif</p>
+                        <div class="file">
+                            <label path="careerImages">For example, any pictures of you doing field work, lab work, or
+                                an interesting activity related to the topic covered in your profile.
+                                Or images of graphs, charts, etc. that support your job/research summary would also be
+                                suitable.</label>
+                        </div>
+
+                        <div>
+                            <a th:href="@{/user/upload?position=Career1}">Upload Career Image 1</a>
+                        </div>
                         <div th:each="image : ${images}">
                             <div th:if="${image.imagePosition == 'Career1'}">
                                 <div th:if="${image?.displayData.toString() != null}">
@@ -171,6 +206,10 @@
                             </div>
                         </div>
 
+
+                        <div>
+                            <a th:href="@{/user/upload?position=Career2}">Upload Career Image 2</a>
+                        </div>
                         <div th:each="image : ${images}">
                             <div th:if="${image.imagePosition == 'Career2'}">
                                 <div th:if="${image?.displayData.toString() != null}">
@@ -185,6 +224,10 @@
                             </div>
                         </div>
 
+
+                        <div>
+                            <a th:href="@{/user/upload?position=Career3}">Upload Career Image 3</a>
+                        </div>
                         <div th:each="image : ${images}">
                             <div th:if="${image.imagePosition == 'Career3'}">
                                 <div th:if="${image?.displayData.toString() != null}">
@@ -199,6 +242,10 @@
                             </div>
                         </div>
 
+
+                        <div>
+                            <a th:href="@{/user/upload?position=Career4}">Upload Career Image 4</a>
+                        </div>
                         <div th:each="image : ${images}">
                             <div th:if="${image.imagePosition == 'Career4'}">
                                 <div th:if="${image?.displayData.toString() != null}">
@@ -213,6 +260,10 @@
                             </div>
                         </div>
 
+
+                        <div>
+                            <a th:href="@{/user/upload?position=Career5}">Upload Career Image 5</a>
+                        </div>
                         <div th:each="image : ${images}">
                             <div th:if="${image.imagePosition == 'Career5'}">
                                 <div th:if="${image?.displayData.toString() != null}">
@@ -227,12 +278,15 @@
                             </div>
                         </div>
 
+
                         <div class="buttonContainer">
-                            <button type="submit" class="signUpButton">Submit</button>
+                            <a href="/user/edit">
+                                <button class="signUpButton">Edit Profile</button>
+                            </a>
                         </div>
+                    </div>
 
 
-                    </form>
                 </div>
             </div>
         </div>

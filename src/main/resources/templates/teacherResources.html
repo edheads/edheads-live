@@ -13,7 +13,7 @@
         gtag('config', 'GA_MEASUREMENT_ID');
     </script>
     <meta charset="UTF-8">
-    <title>Teacher Resources</title>
+    <title>Edheads</title>
     <link rel="icon" href="/assets/favicon.ico">
 
     <link rel="stylesheet" href="/css/main.css">
@@ -57,6 +57,8 @@
             </div>
             <div sec:authorize="isAuthenticated()" class="topNav">
                 <ul class="mainNav">
+                    <li class="topNavItem"><a href="/donate">Donate</a></li>
+                    <li sec:authorize="isAuthenticated()" class="topNavItem"><a href="/user">My Profile</a></li>
                     <li class="topNavItem">
                         <form name='logout' th:action="@{/logout}" method='post'>
                             <button class="topNavItem" type="submit">Log Out</button>

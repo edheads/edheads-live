@@ -1,8 +1,5 @@
 package com.example.demo.models;
 
-import com.example.demo.models.enums.GradeRange;
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

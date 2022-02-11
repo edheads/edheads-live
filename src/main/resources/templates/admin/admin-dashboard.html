@@ -46,39 +46,38 @@
                         </li>
                     </ul>
                 </div>
-            <div class="logo">
-                <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
-            </div>
+                <div class="logo">
+                    <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+                </div>
 
-            <div class=""> </div>
+                <div class=""> </div>
 
-            <div class="mainNavContainer">
-                <ul class="mainNav">
-                    <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
-                    <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
-                    <li class="mainNavItem"><a href="/about-us">About Us</a></li>
-                    <li class="mainNavItem"><a href="/our-games">Our Games</a></li>
-                    <li class="mainNavItem active"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
-                    <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
-                </ul>
-                <div class="logoWG">
-                    <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+                <div class="mainNavContainer">
+                    <ul class="mainNav">
+                        <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
+                        <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+                        <li class="mainNavItem"><a href="/about-us">About Us</a></li>
+                        <li class="mainNavItem active"><a href="/our-games">Our Games</a></li>
+                        <li class="mainNavItem"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+                        <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+                    </ul>
+                    <div class="logoWG">
+                        <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+                    </div>
                 </div>
             </div>
-        </div>
     </header>
 </div>
 <main>
     <section id="basicPageContainer">
-        <div class="basicPageContentContainer">
-            <div class="basicPageMain">
-                <h1>STEM Professions</h1>
-            </div>
         <div class="titleContainer">
-            <span th:each="tag : ${keywords}" class="keywords">
-                <a th:href="@{/stem-careers/tags/{word}(word=${tag.codeValue})}" th:text="${tag.displayValue}" class="addButton"></a>
-            </span>
-        </div>
+            <h1 class="gamesPageTitle"Edheads Admin Dashboard</h1>
+
+            <div class="gamesPageContentContainer">
+                <a href="/teachers/admin" class="addButton">See all Teachers</a>
+                <a href="/stem-careers/admin" class="addButton">See all STEM Professionals</a>
+                <a href="/keywords/admin" class="addButton">See all STEM Keywords</a>
+            </div>
         </div>
 
     </section>

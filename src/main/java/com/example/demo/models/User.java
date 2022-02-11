@@ -1,45 +1,50 @@
 package com.example.demo.models;
 
-
-import com.example.demo.models.enums.AccountType;
-import com.example.demo.models.enums.USAState;
-import org.springframework.context.annotation.Bean;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-
+import java.util.Collection;
 
 @Entity
 public class User {
+
+    /*
+    * GENERAL USER PROPERTIES
+    */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String role;
     private String email;
     private String password;
+    private int privileges;
     private String firstName;
     private String lastName;
 
-    private LocalDate dateCreated;
-    private LocalDate dateUpdate;
-    private boolean subscribeToNewsInd;
-
-    private String schoolOrganization;
-    private String district;
     private String country;
     private String state;
     private String city;
 
+    private LocalDate dateCreated;
+    private LocalDate dateUpdate;
+
+    /*
+     * TEACHER PROPERTIES
+     */
+    private String schoolOrganization;
+    private String district;
     private String gradeRange;
     private String schoolType;
     private String numberOfStudents;
     private String percentOfFreeLunches;
-
     private String description;
 
+    /*
+     * PROFESSIONAL PROPERTIES
+     */
+    private String company;
+    private String university;
     private boolean approvedByAdmin;
     private String careerTitle;
     private String careerDescription;
@@ -51,18 +56,28 @@ public class User {
     private String memorableCareerMoment;
     private String pastChangeDesc;
     private String futureChangeDesc;
-
-    private String profileImage;
-    private ArrayList<String> careerImages;
     private String keywords;
 
-    private String company;
-    private String university;
-
+    /*
+     * EDHEADS SUPPORT PROPERTIES
+     */
     private boolean gameHelpInd;
     private boolean gameFundingInd;
     private boolean socialMediaInd;
     private boolean volunteerInd;
+    private boolean subscribeToNewsInd;
+
+    /*
+     * TRANSIENT USER PROPERTIES (not persisted in db)
+     */
+    @Transient
+    private boolean profileImageInd;
+    @Transient
+    private boolean careerImageInd;
+    @Transient
+    private String profileImage;
+    @Transient
+    private Collection<Image> images;
 
 
     public User() {}
@@ -82,19 +97,21 @@ public class User {
                 String district, String country, String state, String city, String gradeRange, String schoolType,
                 String numberOfStudents, String percentOfFreeLunches, String description, boolean approvedByAdmin,
                 String careerTitle, String careerDescription, String educationDescription, String careerPathChallenge,
-                String jobBestDescription, String jobWorstDescription, String jobExcitingDescription, String memorableCareerMoment, String pastChangeDesc,
-                String futureChangeDesc, String company, String university, boolean gameHelpInd, boolean gameFundingInd,
-                boolean socialMediaInd, boolean volunteerInd, String profileImage) {
+                String jobBestDescription, String jobWorstDescription, String jobExcitingDescription,
+                String memorableCareerMoment, String pastChangeDesc, String futureChangeDesc, String company,
+                String university, boolean gameHelpInd, boolean gameFundingInd, boolean socialMediaInd,
+                boolean volunteerInd, String keywords, int privileges, String profileImage, Collection<Image> images,
+                boolean profileImageInd, boolean careerImageInd) {
 
         this.id = id;
         this.role = role;
         this.email = email;
         this.password = password;
+        this.privileges = privileges;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateCreated = dateCreated;
         this.dateUpdate = dateUpdate;
-        this.subscribeToNewsInd = subscribeToNewsInd;
 
         //teacher attributes
         this.schoolOrganization = schoolOrganization;
@@ -120,19 +137,20 @@ public class User {
         this.memorableCareerMoment = memorableCareerMoment;
         this.pastChangeDesc = pastChangeDesc;
         this.futureChangeDesc = futureChangeDesc;
-        this.profileImage = profileImage;
-//        this.careerImages = careerImages;
         this.keywords = keywords;
-
+        this.profileImage = profileImage;
         this.company = company;
         this.university = university;
+        this.images = images;
 
         //Edheads support atrributes
         this.gameHelpInd = gameHelpInd;
         this.gameFundingInd = gameFundingInd;
         this.socialMediaInd = socialMediaInd;
         this.volunteerInd = volunteerInd;
-
+        this.subscribeToNewsInd = subscribeToNewsInd;
+        this.profileImageInd = profileImageInd;
+        this.careerImageInd = careerImageInd;
 
     }
 
@@ -167,6 +185,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public int getPrivileges() {
+        return privileges;
+    }
+
+    public void setPrivileges(int privileges) { this.privileges = privileges; }
 
     public String getFirstName() {
         return firstName;
@@ -422,6 +446,14 @@ public class User {
         this.volunteerInd = volunteerInd;
     }
 
+    public String getKeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(String keywords) {
+        this.keywords = keywords;
+    }
+
     public String getProfileImage() {
         return profileImage;
     }
@@ -430,19 +462,27 @@ public class User {
         this.profileImage = profileImage;
     }
 
-    public ArrayList<String> getCareerImages() {
-        return careerImages;
+    public Collection<Image> getImages() {
+        return images;
     }
 
-    public void setCareerImages(ArrayList<String> careerImages) {
-        this.careerImages = careerImages;
+    public void setImages(Collection<Image> images) {
+        this.images = images;
     }
 
-    public String getKeywords() {
-        return keywords;
+    public boolean isProfileImageInd() {
+        return profileImageInd;
     }
 
-    public void setKeywords(String keywords) {
-        this.keywords = keywords;
+    public void setProfileImageInd(boolean profileImageInd) {
+        this.profileImageInd = profileImageInd;
+    }
+
+    public boolean isCareerImageInd() {
+        return careerImageInd;
+    }
+
+    public void setCareerImageInd(boolean careerImageInd) {
+        this.careerImageInd = careerImageInd;
     }
 }

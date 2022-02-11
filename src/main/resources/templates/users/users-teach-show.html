@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Edheads</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/form.css">
+
+</head>
+<body>
+<section id="basicPageContainer">
+    <div class="signUpContainer">
+        <div class="basicPageMain">
+
+            <div class="closeForm"><a href="javascript:history.back()">X</a></div>
+
+            <div class="signUpPageContent">
+                <div class="container text-center">
+
+                    <div>
+                        <h1 class="signUpTitle">My Profile</h1>
+                    </div>
+                    <div th:object="${user}">
+
+                        <div class="accountRowOne">
+                            <input type="hidden" th:field="*{id}">
+                            <input type="hidden" th:field="*{role}">
+                            <input type="hidden" th:field="*{city}">
+                            <input type="hidden" th:field="*{state}">
+                            <input type="hidden" th:field="*{dateCreated}">
+                        </div>
+
+                            <input  class="form-control-readonly"th:field="*{firstName}" readonly>
+                            <input  class="form-control-readonly" th:field="*{lastName}" readonly>
+
+                        <div class="questionsRowTwo">
+
+                            Name of School or Organization
+                            <div class="schoolOrOrganization">
+                                <input type="text" placeholder="Name of School or Organization"
+                                       th:field="*{schoolOrganization}" class="form-control-readonly" readonly/>
+                            </div>
+
+                            School District
+                            <div class="schoolDistrict">
+                                <input type="text" placeholder="School District" th:field="*{district}"
+                                       class="form-control-readonly" readonly/>
+                            </div>
+                        </div>
+
+                        <div class="gradeLevel">
+                            <div class="formLabel"><label>Grade(s) Taught or Reached: </label></div>
+                            <div>
+                                <input name="gradeRange" type="text" th:field="*{gradeRange}"
+                                        class="form-control-readonly" readonly>
+                                </input>
+                            </div>
+                        </div>
+
+                        <div class="schoolCommunity">
+                            <div class="formLabel"> <label>Type of School Community: </label></div>
+                            <div>
+                                <input name="schoolType" type="text" th:field="*{schoolType}" class="form-control-readonly" readonly>
+                                </input>
+                            </div>
+                        </div>
+
+                        <div class="numberOfStudents">
+                            <div class="formLabel"><label>Number of Students in your School District:</label></div>
+                            <div>
+                                <input name="numberOfStudents" type="text" th:field="*{numberOfStudents}"
+                                        class="form-control-readonly" readonly>
+                                </input>
+                            </div>
+                        </div>
+
+                        <div class="lunchProgram">
+                            <div class="formLabel">
+                                <label>Roughly what percentage of your school's students are on free and
+                                    reduce lunches? </label></div>
+                            <div>
+                                <input name="percentOfFreeLunches" type="text" th:field="*{percentOfFreeLunches}"
+                                        class="form-control-readonly" readonly>
+                                </input>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

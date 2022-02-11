@@ -23,14 +23,6 @@
                     <div>
                         <h1 class="signUpTitle">Edit STEM Professional</h1>
                     </div>
-                    <form th:action="@{/stem-careers/delete-user}" th:object="${user}"
-                          method="post">
-                        <input type="hidden" th:field="*{id}">
-                        <div class="buttonContainer">
-                            <button type="submit" class="deleteButton">Delete User</button>
-                        </div>
-                    </form>
-
                     <form th:action="@{/stem-careers/edit}" th:object="${user}"
                           method="post">
 
@@ -48,35 +40,19 @@
                             <input type="hidden"   th:field="*{approvedByAdmin}">
                         </div>
 
-                            <input  class="form-control-readonly"th:field="*{firstName}" readonly>
-                            <input  class="form-control-readonly" th:field="*{lastName}" readonly>
+                        <div class="accountRowOne">
+                            <div class="firstName">
+                                <input type="text" placeholder="First Name" th:field="*{firstName}"
+                                       class="form-control"
+                                       required minlength="1" maxlength="20"/>
+                            </div>
 
-                        <div class="keywords">
-                            <p>Keywords:</p>
-                            <textarea type="text"
-
-                                      th:field="*{keywords}" class="form-control" maxlength="1000"
-                            ></textarea>
-                        </div>
-
-                        <h2 class="createAccountTitle">Profile Image</h2>
-                        <div th:each="image : ${images}">
-                            <div th:if="${image.imagePosition == 'Profile'}">
-                                <div th:if="${image?.displayData.toString() != null}">
-                                    <div class="profileImg">
-                                        <img th:src="|data:image/png;base64,${image.displayData.toString()}|"
-                                             class="profile">
-                                    </div>
-                                </div>
+                            <div class="lastName">
+                                <input type="text" placeholder="Last Name" th:field="*{lastName}"
+                                       class="form-control"
+                                       required minlength="1" maxlength="20"/>
                             </div>
                         </div>
-                        <div th:if="${profileInd==false}">
-                            <div class="profileImg">
-                                <img th:src="@{/uploads/users/edheads-no-profile.jpg}" class="profile">
-                            </div>
-                        </div>
-
-                        <h2 class="createAccountTitle">Professional Details</h2>
 
                         <div class="company">
                                         <textarea type="text" placeholder="Company"
@@ -154,77 +130,6 @@
                                               placeholder="What do you think will change in the next 10 years?"
                                               th:field="*{futureChangeDesc}" class="form-control" maxlength="1000"
                                               ></textarea>
-                        </div>
-
-                        <h2 class="createAccountTitle">Career-Related Images</h2>
-                        <div th:each="image : ${images}">
-                            <div th:if="${image.imagePosition == 'Career1'}">
-                                <div th:if="${image?.displayData.toString() != null}">
-                                    <a th:href="@{/image/view?image={image}(image=${image.id})}" target="_blank">
-                                        <div class="profileImg">
-                                            <img th:src="|data:image/png;base64,${image.displayData.toString()}|"
-                                                 class="profile">
-                                        </div>
-                                    </a>
-                                    <div th:text="${image.caption}"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div th:each="image : ${images}">
-                            <div th:if="${image.imagePosition == 'Career2'}">
-                                <div th:if="${image?.displayData.toString() != null}">
-                                    <a th:href="@{/image/view?image={image}(image=${image.id})}" target="_blank">
-                                        <div class="profileImg">
-                                            <img th:src="|data:image/png;base64,${image.displayData.toString()}|"
-                                                 class="profile">
-                                        </div>
-                                    </a>
-                                    <div th:text="${image.caption}"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div th:each="image : ${images}">
-                            <div th:if="${image.imagePosition == 'Career3'}">
-                                <div th:if="${image?.displayData.toString() != null}">
-                                    <a th:href="@{/image/view?image={image}(image=${image.id})}" target="_blank">
-                                        <div class="profileImg">
-                                            <img th:src="|data:image/png;base64,${image.displayData.toString()}|"
-                                                 class="profile">
-                                        </div>
-                                    </a>
-                                    <div th:text="${image.caption}"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div th:each="image : ${images}">
-                            <div th:if="${image.imagePosition == 'Career4'}">
-                                <div th:if="${image?.displayData.toString() != null}">
-                                    <a th:href="@{/image/view?image={image}(image=${image.id})}" target="_blank">
-                                        <div class="profileImg">
-                                            <img th:src="|data:image/png;base64,${image.displayData.toString()}|"
-                                                 class="profile">
-                                        </div>
-                                    </a>
-                                    <div th:text="${image.caption}"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div th:each="image : ${images}">
-                            <div th:if="${image.imagePosition == 'Career5'}">
-                                <div th:if="${image?.displayData.toString() != null}">
-                                    <a th:href="@{/image/view?image={image}(image=${image.id})}" target="_blank">
-                                        <div class="profileImg">
-                                            <img th:src="|data:image/png;base64,${image.displayData.toString()}|"
-                                                 class="profile">
-                                        </div>
-                                    </a>
-                                    <div th:text="${image.caption}"></div>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="buttonContainer">

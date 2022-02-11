@@ -71,40 +71,21 @@
 <main>
     <section id="basicPageContainer">
         <div class="titleContainer">
-            <h1 class="gamesPageTitle">STEM Professionals</h1>
-            <div class="padding">
-                <a th:href = "@{/career_signup}" class="addButton">+ Add STEM Professional </a>
-                <a th:href = "@{/keywords/admin}" class="addButton">See STEM Keywords</a>
-            </div>
-            <div>
-                <p>Note: if you would like to delete a user's account from Edheads, click 'Update' and you will see an option to "Delete User".</p>
-            </div>
+            <h1 class="gamesPageTitle">Teachers</h1>
+
             <div class="gamesPageContentContainer">
                     <table border="1">
                         <thead>
                             <tr>
                                 <th>
-                                        Professional First Name
+                                        Teacher First Name
                                 </th>
                                 <th>
-                                        Professional Last Name
+                                        Teacher Last Name
                                 </th>
                                 <th>
-                                        Professional Email
+                                        Teacher Email
                                 </th>
-                                <th>
-                                    Keywords
-                                </th>
-                                <th>
-                                        Approved by Admin?
-                                </th>
-                                <th> Update </th>
-                                <th> Display on Site </th>
-                                <th> Game Help </th>
-                                <th> Game Funding </th>
-                                <th> Social Media </th>
-                                <th> Volunteer </th>
-                                <th> Admin Rights</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,43 +93,6 @@
                                 <td th:text="${career.firstName}"></td>
                                 <td th:text="${career.lastName}"></td>
                                 <td th:text="${career.email}"></td>
-                                <td th:text="${career.keywords}"></td>
-                                <td th:text="${career.approvedByAdmin}"></td>
-                                <td>
-                                    <a th:href="@{/stem-careers/{id}/edit(id=${career.id})}">Update</a>
-                                </td>
-                                <td>
-                                    <div th:if="false == ${career.approvedByAdmin}">
-                                        <form th:action="@{/stem-careers/{id}/approve(id=${career.id})}" th:object="${user}"
-                                              method="post">
-                                            <button type="submit" class="addButton">Approve</button>
-                                        </form>
-                                    </div>
-                                    <div th:if="true == ${career.approvedByAdmin}">
-                                        <form th:action="@{/stem-careers/{id}/disable(id=${career.id})}" th:object="${user}"
-                                              method="post">
-                                            <button type="submit" class="deleteButton">Disable</button>
-                                        </form>
-                                    </div>
-                                </td>
-                                <td th:text="${career.gameHelpInd}"></td>
-                                <td th:text="${career.gameFundingInd}"></td>
-                                <td th:text="${career.socialMediaInd}"></td>
-                                <td th:text="${career.volunteerInd}"></td>
-                                <td>
-                                    <div th:if="${career.privileges == 1}">
-                                        <form th:action="@{/stem-careers/{id}/admin(id=${career.id})}" th:object="${user}"
-                                              method="post">
-                                            <button type="submit" class="addButton">Add Admin</button>
-                                        </form>
-                                    </div>
-                                    <div th:if="${career.privileges > 1}">
-                                        <form th:action="@{/stem-careers/{id}/remove-admin(id=${career.id})}" th:object="${user}"
-                                              method="post">
-                                            <button type="submit" class="deleteButton">Remove Admin</button>
-                                        </form>
-                                    </div>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
