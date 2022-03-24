@@ -74,7 +74,7 @@
             <div class="basicPageMain">
                 <h1>STEM Professions</h1>
             </div>
-        <div class="titleContainer">
+        <div class="titleContainerKeywords">
             <span th:each="tag : ${keywords}" class="keywords">
                 <a th:href="@{/stem-careers/tags/{word}(word=${tag.codeValue})}" th:text="${tag.displayValue}" class="addButton"></a>
             </span>

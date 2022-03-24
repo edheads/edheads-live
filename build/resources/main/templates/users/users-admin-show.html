@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Edheads</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/form.css">
+
+</head>
+<body>
+<section id="basicPageContainer">
+    <div class="signUpContainer">
+        <div class="basicPageMain">
+
+            <div class="closeForm"><a href="javascript:history.back()">X</a></div>
+
+            <div class="signUpPageContent">
+                <div class="container text-center">
+
+                    <div>
+                        <h1 class="signUpTitle">My Profile</h1>
+                    </div>
+                    <div th:object="${user}">
+
+                        <div class="accountRowOne">
+                            <input type="hidden" th:field="*{id}">
+                            <input type="hidden" th:field="*{role}">
+                            <input type="hidden" th:field="*{city}">
+                            <input type="hidden" th:field="*{state}">
+                            <input type="hidden" th:field="*{dateCreated}">
+                        </div>
+
+                            <input  class="form-control-readonly"th:field="*{firstName}" readonly>
+                            <input  class="form-control-readonly" th:field="*{lastName}" readonly>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

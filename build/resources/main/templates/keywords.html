@@ -12,7 +12,7 @@
         gtag('config', 'GA_MEASUREMENT_ID');
     </script>
     <meta charset="UTF-8">
-    <title>Stem Professionals</title>
+    <title>Edheads</title>
     <link rel="icon" href="/assets/favicon.ico">
 
     <link rel="stylesheet" href="/css/main.css">
@@ -27,13 +27,25 @@
 <div class="stickyHeader">
     <header>
         <div class="headerContents">
-            <div class="topNav">
-                <ul class="mainNav">
-                    <li class="topNavItem"><a href="/donate">Donate</a></li>
-                    <li class="topNavItem"><a href="/login">Log In</a></li>
-                    <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
-                </ul>
-            </div>
+            <div class="headerContents">
+                <div sec:authorize="!isAuthenticated()" class="topNav">
+                    <ul class="mainNav">
+                        <li class="topNavItem"><a href="/donate">Donate</a></li>
+                        <li class="topNavItem"><a href="/login">Log In</a></li>
+                        <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div sec:authorize="isAuthenticated()" class="topNav">
+                    <ul class="mainNav">
+                        <li class="topNavItem"><a href="/donate">Donate</a></li>
+                        <li sec:authorize="isAuthenticated()" class="topNavItem"><a href="/user">My Profile</a></li>
+                        <li class="topNavItem">
+                            <form name='logout' th:action="@{/logout}" method='post'>
+                                <button class="topNavItem" type="submit">Log Out</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             <div class="logo">
                 <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
             </div>
@@ -62,24 +74,10 @@
             <div class="basicPageMain">
                 <h1>STEM Professions</h1>
             </div>
-        <div class="titleContainer">
-            <div class="keywords">
-                <a th:href = "@{/stem-careers/tags/aerospace}" class="addButton">Aerospace</a>
-                <a th:href = "@{/stem-careers/tags/architecture}" class="addButton">Architecture</a>
-                <a th:href = "@{/stem-careers/tags/business}" class="addButton">Business</a>
-                <a th:href = "@{/stem-careers/tags/construction}" class="addButton">Construction</a>
-                <a th:href = "@{/stem-careers/tags/efficiency}" class="addButton">Efficiency</a>
-                <a th:href = "@{/stem-careers/tags/engineering}" class="addButton">Engineering</a>
-                <a th:href = "@{/stem-careers/tags/finance}" class="addButton">Finance</a>
-                <a th:href = "@{/stem-careers/tags/forces}" class="addButton">Forces</a>
-                <a th:href = "@{/stem-careers/tags/information-technology}" class="addButton">Information Technology</a>
-                <a th:href = "@{/stem-careers/tags/modeling}" class="addButton">Modeling</a>
-                <a th:href = "@{/stem-careers/tags/motion}" class="addButton">Motion</a>
-                <a th:href = "@{/stem-careers/tags/programming-and-coding}" class="addButton">Programming and Coding</a>
-                <a th:href = "@{/stem-careers/tags/prototype}" class="addButton">Prototype</a>
-                <a th:href = "@{/stem-careers/tags/space}" class="addButton">Space</a>
-                <a th:href = "@{/stem-careers/tags/technology-interface}" class="addButton">Technology Interface</a>
-            </div>
+        <div class="titleContainerKeywords">
+            <span th:each="tag : ${keywords}" class="keywords">
+                <a th:href="@{/stem-careers/tags/{word}(word=${tag.codeValue})}" th:text="${tag.displayValue}" class="addButton"></a>
+            </span>
         </div>
         </div>
 

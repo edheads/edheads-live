@@ -13,7 +13,7 @@
         gtag('config', 'GA_MEASUREMENT_ID');
     </script>
     <meta charset="UTF-8">
-    <title>Our Games</title>
+    <title>Edheads</title>
     <link rel="icon" href="/assets/favicon.ico">
 
     <link rel="stylesheet" href="/css/main.css">
@@ -46,13 +46,25 @@
 <div class="stickyHeader">
     <header>
         <div class="headerContents">
-            <div class="topNav">
-                <ul class="mainNav">
-                    <li class="topNavItem"><a href="/donate">Donate</a></li>
-                    <li class="topNavItem"><a href="/login">Log In</a></li>
-                    <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
-                </ul>
-            </div>
+            <div class="headerContents">
+                <div sec:authorize="!isAuthenticated()" class="topNav">
+                    <ul class="mainNav">
+                        <li class="topNavItem"><a href="/donate">Donate</a></li>
+                        <li class="topNavItem"><a href="/login">Log In</a></li>
+                        <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div sec:authorize="isAuthenticated()" class="topNav">
+                    <ul class="mainNav">
+                        <li class="topNavItem"><a href="/donate">Donate</a></li>
+                        <li sec:authorize="isAuthenticated()" class="topNavItem"><a href="/user">My Profile</a></li>
+                        <li class="topNavItem">
+                            <form name='logout' th:action="@{/logout}" method='post'>
+                                <button class="topNavItem" type="submit">Log Out</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             <div class="logo">
                 <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
             </div>

@@ -13,7 +13,7 @@
 
     </script>
     <meta charset="UTF-8">
-    <title>STEM Professionals</title>
+    <title>Edheads</title>
     <link rel="icon" href="/assets/favicon.ico">
 
     <link rel="stylesheet" href="/css/main.css">
@@ -29,22 +29,25 @@
 <div class="stickyHeader">
     <header>
         <div class="headerContents">
-            <div sec:authorize="!isAuthenticated()" class="topNav">
-                <ul class="mainNav">
-                    <li class="topNavItem"><a href="/donate">Donate</a></li>
-                    <li class="topNavItem"><a href="/login">Log In</a></li>
-                    <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
-                </ul>
-            </div>
-            <div sec:authorize="isAuthenticated()" class="topNav">
-                <ul class="mainNav">
-                    <li class="topNavItem">
-                        <form name='logout' th:action="@{/logout}" method='post'>
-                            <button class="topNavItem" type="submit">Log Out</button>
-                        </form>
-                    </li>
-                </ul>
-            </div>
+            <div class="headerContents">
+                <div sec:authorize="!isAuthenticated()" class="topNav">
+                    <ul class="mainNav">
+                        <li class="topNavItem"><a href="/donate">Donate</a></li>
+                        <li class="topNavItem"><a href="/login">Log In</a></li>
+                        <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div sec:authorize="isAuthenticated()" class="topNav">
+                    <ul class="mainNav">
+                        <li class="topNavItem"><a href="/donate">Donate</a></li>
+                        <li sec:authorize="isAuthenticated()" class="topNavItem"><a href="/user">My Profile</a></li>
+                        <li class="topNavItem">
+                            <form name='logout' th:action="@{/logout}" method='post'>
+                                <button class="topNavItem" type="submit">Log Out</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             <div class="logo">
                 <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
             </div>
@@ -81,9 +84,22 @@
                 </div>
                 <div class="accordionContent">
                     <div class="profileTop">
-                    <div class="profileImg">
-                    <img th:src="@{/uploads/users/{img}(img=${career.profileImage})}" th:alt="${career.lastName}" class="profile">
-                    </div>
+                        <div th:each="image : ${career.images}">
+                            <div th:if="${image.imagePosition == 'Profile'}">
+                                <div th:if="${image?.displayData.toString() != null}">
+                                    <div class="profileImg">
+                                        <img th:src="|data:image/png;base64,${image.displayData.toString()}|"
+                                             th:alt="${career.lastName}"
+                                             class="profile">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div th:if="${career.profileImageInd != true}">
+                            <div class="profileImg">
+                                <img th:src="@{/uploads/users/edheads-no-profile.jpg}" class="profile">
+                            </div>
+                        </div>
                     <div class="profileDetails">
                     <p class="pHeadOrange" th:text="@{Keywords: {keywords}(keywords=${career.keywords})}">
                     </p>
@@ -94,7 +110,7 @@
                     </div>
                     </div>
 
-                    <div th:if="${career.careerDescription} != null">
+                    <div th:if="${(career.careerDescription != null) && (career.careerDescription != '')}">
                         <div class="nestedAccordion">Career Description
                         </div>
                         <div class="accordionContent">
@@ -102,7 +118,7 @@
                             </p>
                         </div>
                     </div>
-                    <div th:if="${career.educationDescription} != null">
+                    <div th:if="${(career.educationDescription != null) && (career.educationDescription != '')}">
                         <div class="nestedAccordion">What is your educational background and motivation to pursue your
                             field of study?
                         </div>
@@ -111,7 +127,7 @@
                             </p>
                         </div>
                     </div>
-                    <div th:if="${career.careerPathChallenge} != null">
+                    <div th:if="${(career.careerPathChallenge != null) && (career.careerPathChallenge != '')}">
                         <div class="nestedAccordion">What have you struggled with or overcome in your educational or
                             life path to your current job?
                         </div>
@@ -120,7 +136,7 @@
                             </p>
                         </div>
                     </div>
-                    <div th:if="${career.jobBestDescription} != null">
+                    <div th:if="${(career.jobBestDescription != null) && (career.jobBestDescription != '')}">
                         <div class="nestedAccordion">What is the best part of your job or research?
                         </div>
                         <div class="accordionContent">
@@ -128,7 +144,7 @@
                             </p>
                         </div>
                     </div>
-                    <div th:if="${career.jobWorstDescription} != null">
+                    <div th:if="${(career.jobWorstDescription != null) && (career.jobWorstDescription != '')}">
                         <div class="nestedAccordion">What is the worst part of your job or research?
                         </div>
                         <div class="accordionContent">
@@ -136,7 +152,7 @@
                             </p>
                         </div>
                     </div>
-                    <div th:if="${career.jobExcitingDescription} != null">
+                    <div th:if="${(career.jobExcitingDescription != null) && (career.jobExcitingDescription != '')}">
                         <div class="nestedAccordion">What is the most exciting part of your job?
                         </div>
                         <div class="accordionContent">
@@ -144,7 +160,7 @@
                             </p>
                         </div>
                     </div>
-                    <div th:if="${career.memorableCareerMoment} != null">
+                    <div th:if="${(career.memorableCareerMoment != null) && (career.memorableCareerMoment != '')}">
                         <div class="nestedAccordion">What is your most memorable career-related moment?
                         </div>
                         <div class="accordionContent">
@@ -152,7 +168,7 @@
                             </p>
                         </div>
                     </div>
-                    <div th:if="${career.pastChangeDesc} != null">
+                    <div th:if="${(career.pastChangeDesc != null) && (career.pastChangeDesc != '')}">
                         <div class="nestedAccordion">What has changed about your profession in the past ten years?
                         </div>
                         <div class="accordionContent">
@@ -160,13 +176,33 @@
                             </p>
                         </div>
                     </div>
-                    <div th:if="${career.futureChangeDesc} != null">
+                    <div th:if="${(career.futureChangeDesc != null) && (career.futureChangeDesc != '')}">
                         <div class="nestedAccordion">What do you think will change in your industry in the next ten
                             years?
                         </div>
                         <div class="accordionContent">
                             <p th:text="${career.futureChangeDesc}">
                             </p>
+                        </div>
+                    </div>
+                    <div th:if="${career.careerImageInd == true}">
+                        <div class="nestedAccordion">View my career-related images!
+                        </div>
+                        <div class="accordionContent">
+                            <div th:each="image : ${career.images}">
+                                <div th:if="${image.imagePosition != 'Profile'}">
+                                    <div th:if="${image?.displayData.toString() != null}">
+                                        <a th:href="@{/image/view?image={image}(image=${image.id})}" target="_blank">
+                                            <div class="profileImg">
+                                                <img th:src="|data:image/png;base64,${image.displayData.toString()}|"
+                                                     class="profile">
+                                            </div>
+                                        </a>
+                                        <div th:text="${image.caption}"></div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

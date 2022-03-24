@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Edheads</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/form.css">
+
+    <!--    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />-->
+    <!--    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>-->
+    <!--    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>-->
+</head>
+<body>
+<section id="basicPageContainer">
+    <div class="signUpContainer">
+        <div class="basicPageMain">
+
+            <div class="closeForm"><a href="javascript:history.back()">X</a></div>
+
+            <div class="signUpPageContent">
+                <div class="container text-center">
+
+                    <div>
+                        <h1 class="signUpTitle">Upload an Image</h1>
+                    </div>
+
+                    <form th:action="@{/user/upload}" th:object="${image}"
+                          method="post"
+                          enctype="multipart/form-data">
+
+                        <input type="hidden" name="position" th:value="${position}">
+
+                        <div class="m-3">
+
+                            <h2 class="createAccountTitle">Please upload an image</h2>
+                            <p>*Accepted file formats: .png, .jpeg, .gif</p>
+                            <div class="file">
+                                <input type="file" name="file" accept="image/png, image/gif, image/jpeg">
+                            </div>
+                            <div class="caption">
+                                <input type="text" placeholder="Image caption" th:field="*{caption}"
+                                       class="form-control"
+                                       minlength="0" maxlength="200"/>
+                            </div>
+
+                            <div class="buttonContainer">
+                                <button type="submit" class="signUpButton">Upload</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

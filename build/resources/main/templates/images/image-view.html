@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Edheads</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/form.css">
+
+    <!--    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />-->
+    <!--    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>-->
+    <!--    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>-->
+</head>
+<body>
+<section id="basicPageContainer">
+    <div>
+        <div th:if="${image?.displayData.toString() != null}">
+                <div class="singleImage">
+                    <img th:src="|data:image/png;base64,${image.displayData.toString()}|" class="singleImage">
+                </div>
+            <div th:text="${image.caption}"></div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
