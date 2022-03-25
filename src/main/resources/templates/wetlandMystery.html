@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <meta charset="UTF-8">
+    <title>Edheads</title>
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/basicPage.css">
+    <link rel="stylesheet" href="/css/singleGameView.css">
+
+
+<!--    <script src="js/game.js" defer></script>-->
+    <script src="js/accordion.js" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '387795396444479');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=387795396444479&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+</head>
+<body>
+<div class="stickyHeader">
+    <header>
+        <div class="headerContents">
+            <div sec:authorize="!isAuthenticated()" class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem"><a href="/donate">Donate</a></li>
+                    <li class="topNavItem"><a href="/login">Log In</a></li>
+                    <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+                </ul>
+            </div>
+            <div sec:authorize="isAuthenticated()" class="topNav">
+                <ul class="mainNav">
+                    <li class="topNavItem"><a href="/donate">Donate</a></li>
+                    <li sec:authorize="isAuthenticated()" class="topNavItem"><a href="/user">My Profile</a></li>
+                    <li class="topNavItem">
+                        <form name='logout' th:action="@{/logout}" method='post'>
+                            <button class="topNavItem" type="submit">Log Out</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+            </div>
+
+            <div class=""> </div>
+
+            <div class="mainNavContainer">
+                <ul class="mainNav">
+                    <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
+                    <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+                    <li class="mainNavItem"><a href="/about-us">About Us</a></li>
+                    <li class="mainNavItem"><a href="/our-games">Our Games</a></li>
+                    <li class="mainNavItem  active"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+                    <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+                </ul>
+                <div class="logoWG">
+                    <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+    <main>
+
+
+<section id="singleGameContainer">
+
+    <div class="singleGameContentContainer">
+        <div class="backNav"><a href="/more-fun-stuff">Back to more fun stuff</a> </div>
+
+        <h1>STEM Mysteries: Wetlands</h1>
+
+
+        <div class="singleGameContent">
+            <p>A new golf course was built in Florida. The golf course was built over some existing marshes,
+                which in Florida requires the builder of the course to create more marshlands somewhere else.
+                These newly created marshlands, called mitigation areas (mitigating, or making up for the
+                loss of wetlands), are required to be monitored twice a year to see that
+                they are created correctly and that the newly created wetland is growing
+                and progressing toward offering the same ecological function as the wetlands that were destroyed.
+                This monitoring is conducted by qualified wetland biologists.</p>
+
+               <p> At nine of the ten marshland mitigation areas of this golf course, the wetland biologist finds
+                   good growth and progression toward the goal of reaching the same ecological function.
+                   Marsh grasses are growing and there is good coverage of plants, and animals like crabs and
+                   herons can be seen. However, in the 10th area, there is only one plant visible, no animals,
+                   and it is not clear why. The wetland biologist must determine what the problem is and solve
+                   it to get the marshland mitigation area to grow and function like the others.
+            </p>
+
+
+        </div>
+
+<!--        start first accordion-->
+
+        <div class="accordion">What is Wetland Biology?
+        </div>
+        <div class="accordionContent">
+            <p>
+                Wetland biology is a growing area within the fields of biology and the biological sciences.
+                Biology is the study of all life – plant and animal – and how they react with their environment.
+                Wetland biology is about the relationship between a wetland environment and the plant and animal
+                life that lives there. They are often called upon to determine how healthy and ecologically
+                functional certain wetlands are. They can be called upon to test water and soil, conduct surveys of
+                animal and plant life, or conduct formal monitoring over time.  Formal monitoring involves establishing permanent,
+                fixed locations in which to assess the percent coverage of certain plants. Formal monitoring involves taking photos,
+                generating charts and graphs and comparing the growth or health of the area over time.
+                Informal monitoring might involve a simple check to see if the area is alive and determining
+                if the area is relatively healthy, given age and circumstances surrounding the area.
+            </p>
+            <p>
+                <strong> Education or skills required:</strong> The minimum education required to become a wetland
+                specialist is to complete a bachelor's degree in science majoring in ecology or
+                a similar discipline. To progress a career as a wetland specialist a masters or Ph. D. is required.
+            </p>
+
+
+
+        </div>
+
+<!--        end first accordion-->
+
+        <!--        start first accordion-->
+
+        <div class="accordion">Whetlands Activity Sheet
+        </div>
+        <div class="accordionContent">
+
+            <p>Please answer this question on your Whetlands Activity Sheet.</p>
+            <p style="font-size: 1.25rem;font-weight: 700;">
+                Which two of the following items will the wetland biologist most likely check,
+                in order to solve the mystery?
+            </p>
+
+            <div style="display: flex; justify-content: space-evenly;font-size: 1.125rem;text-align: center;margin-bottom: 2rem;">
+
+                <div>
+                   <div class="contentArea"> Weather</div>
+                    <div class="contentArea"> Dumping</div>
+                    <div class="contentArea"> Plant Identification</div>
+                </div>
+
+                <div>
+                    <div class="contentArea">  Water Testing </div>
+                    <div class="contentArea">  Runoff from Golf Course </div>
+                    <div class="contentArea">  Snails or Fungus</div>
+                </div>
+
+
+            </div>
+
+            <p>After exploring the information above and recording data you think is important on your worksheet,
+                please consider what the next steps will be to solve the problem.  Knowing what the problem is constitutes
+                the first step.  What second and third steps do you think the wetland biologist should take to bring this mitigation area back to life?</p>
+
+
+
+
+        </div>
+
+        <!--        end first accordion-->
+
+
+
+
+        <div class="accordion">Glossary of Terms
+        </div>
+        <div class="accordionContent">
+            <p class="pHead">Wetland</p>
+            <p class="pText">Land consisting of marshes or swamps; saturated land.</p>
+
+            <p class="pHead">Tidal Marsh</p>
+            <p class="pText">Marsh found along rivers, coasts and estuaries which
+                floods and drains by the tidal movement of the adjacent estuary, sea or ocean.</p>
+
+            <p class="pHead">Mitigation</p>
+            <p class="pText">The action of reducing the severity, seriousness, or painfulness of something.
+                In this case, the mitigation areas being monitored exist to reduce the ecological severity of
+                building a golf course in an area with salt water marshes by creating new marshes.</p>
+
+            <p class="pHead">Fresh Water</p>
+            <p class="pText">Any naturally occurring liquid/solid water containing low concentrations of dissolved salts.</p>
+
+            <p class="pHead">Tamper</p>
+            <p class="pText">Interfere with something causing damage or unauthorized changes.</p>
+
+            <p class="pHead">Topography</p>
+            <p class="pText">The arrangement of the natural and artificial physical features of an area.
+            </p>
+        </div>
+
+
+
+    </div>
+
+    <div class="sideBar">
+        <!--        <div class="sideBarText">Sidebar Text</div>-->
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=331605&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+
+        <div class="sideBarAd">
+            <script src="//ap.lijit.com/www/delivery/fpi.js?z=596345&width=300&height=250"></script>
+            <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+        </div>
+
+        <div sec:authorize="isAuthenticated()" class="buttonContainer">
+            <a href="/welcome">View Teacher Resources</a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer-component></footer-component>
+</main>
+</body>
+</html>

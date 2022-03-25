@@ -3,7 +3,6 @@ package com.example.demo.controllers;
 
 import com.example.demo.models.User;
 import com.example.demo.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -134,6 +133,12 @@ public class BasicsController {
     public String displayMoreFunStuffPage() {
 
         return "moreFunStuff";
+    }
+
+    @RequestMapping("/stem-mysteries-wetlands")
+    public String displayStemMysteryWetlandsPage() {
+
+        return "wetlandMystery";
     }
 
 
