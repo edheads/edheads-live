@@ -1,13 +1,5 @@
-#modalTrigger{
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-    border: #d1a10e solid .75rem;
-    color: #d1a10e;
-    text-align: center;
-    font-size: 3rem;
-    padding: 1rem;
-    font-weight: 900;
+.modal-open{
+    color: #FFFFFF;
     cursor: pointer;
 }
 
@@ -30,6 +22,7 @@
     border: .5rem solid #d1a10e;
     border-radius: .75rem;
     width: 75%;
+    text-align: left;
 }
 
 .close {
