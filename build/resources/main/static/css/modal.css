@@ -57,13 +57,25 @@
 }
 
 .cardIntro{
-    width: 33.33%;
+    width: 50%;
+    text-align: center;
+}
+
+.cardDiagram{
+    width: 100%;
     text-align: center;
 }
 
 .card_imageIntro{
     width: 100%;
-    height: 150px;
+    height: 250px;
+    object-fit: fill;
+}
+
+
+.card_imageDiagram{
+    width: 100%;
+    height: 100%;
     object-fit: fill;
 }
 
@@ -80,7 +92,7 @@
 
 .card_image{
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     object-position: center;
 }
