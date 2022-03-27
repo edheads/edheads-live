@@ -110,7 +110,6 @@ td.text-right {
 }
 
 .card{
-
     width: 33.33%;
     text-align: center;
 }
@@ -118,8 +117,7 @@ td.text-right {
 .card_image{
     width: 100%;
     height: 150px;
-    object-fit: cover;
-    object-position: center;
+    object-fit: fill;
 }
 
 .image_container{
