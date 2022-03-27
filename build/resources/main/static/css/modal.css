@@ -69,6 +69,8 @@
 .card_imageIntro{
     width: 100%;
     height: 250px;
+    border-radius: 1rem;
+    border: solid #cbd543 0.25rem;
     object-fit: fill;
 }
 
@@ -77,6 +79,8 @@
     width: 100%;
     height: 100%;
     object-fit: fill;
+    border-radius: 1rem;
+    border: solid #cbd543 0.25rem;
 }
 
 .image_containerIntro{
@@ -95,6 +99,8 @@
     height: 250px;
     object-fit: cover;
     object-position: center;
+    border-radius: 1rem;
+    border: solid #cbd543 0.25rem;
 }
 
 .card_image_lg{
@@ -102,6 +108,8 @@
     height: 350px;
     object-fit: cover;
     object-position: center;
+    border-radius: 1rem;
+    border: solid #cbd543 0.25rem;
 }
 
 .image_container{
