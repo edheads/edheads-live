@@ -117,17 +117,7 @@ public class BasicsController {
         return "teacherResources";
     }
 
-    @RequestMapping("/basic-page")
-    public String displayBasicPage() {
 
-        return "basicPage";
-    }
-
-    @RequestMapping("/header-test")
-    public String displayHeaderTestPage() {
-
-        return "newHeader";
-    }
 
     @RequestMapping("/more-fun-stuff")
     public String displayMoreFunStuffPage() {
