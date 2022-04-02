@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.models.User;
 import com.example.demo.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -117,18 +118,22 @@ public class BasicsController {
         return "teacherResources";
     }
 
+    @RequestMapping("/basic-page")
+    public String displayBasicPage() {
 
+        return "basicPage";
+    }
+
+    @RequestMapping("/header-test")
+    public String displayHeaderTestPage() {
+
+        return "newHeader";
+    }
 
     @RequestMapping("/more-fun-stuff")
     public String displayMoreFunStuffPage() {
 
         return "moreFunStuff";
-    }
-
-    @RequestMapping("/stem-mysteries-wetlands")
-    public String displayStemMysteryWetlandsPage() {
-
-        return "wetlandMystery";
     }
 
 

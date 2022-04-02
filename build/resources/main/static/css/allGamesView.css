@@ -3,19 +3,11 @@
     /*margin-top: 2rem;*/
 }
 
-.titleContainerKeywords{
-    width: 100%;
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem 1rem;
-}
-
 .keywords{
     display: grid;
-    /*gap: 1rem 1rem;*/
-    /*grid-template-columns: 1fr 1fr;*/
-    /*margin: 3rem 0rem 3rem 0rem;*/
+    gap: 1rem 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin: 3rem 0rem 3rem 0rem;
 }
 
 .gamesPageTitle{
