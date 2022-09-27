@@ -136,6 +136,11 @@ public class BasicsController {
         return "moreFunStuff";
     }
 
+    @RequestMapping("/more-fun-stuff/wetlands-mystery")
+    public String displayWetlandsMysteryPage() {
+
+        return "wetlandMystery.html";
+    }
 
     /*
      * LOGIN & SIGN UP ROUTES
