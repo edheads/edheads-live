@@ -124,11 +124,11 @@ public class BasicsController {
         return "basicPage";
     }
 
-    @RequestMapping("/header-test")
-    public String displayHeaderTestPage() {
-
-        return "newHeader";
-    }
+//    @RequestMapping("/header-test")
+//    public String displayHeaderTestPage() {
+//
+//        return "newHeader";
+//    }
 
     @RequestMapping("/more-fun-stuff")
     public String displayMoreFunStuffPage() {
@@ -136,10 +136,16 @@ public class BasicsController {
         return "moreFunStuff";
     }
 
-    @RequestMapping("/more-fun-stuff/wetlands-mystery")
+    @RequestMapping("/wetlands-mystery")
     public String displayWetlandsMysteryPage() {
 
-        return "wetlandMystery.html";
+        return "wetlandsMystery.html";
+    }
+
+    @RequestMapping("/superstemsaturday")
+    public String displaySuperStemSaturdayPage() {
+
+        return "superStemSaturday.html";
     }
 
     /*
