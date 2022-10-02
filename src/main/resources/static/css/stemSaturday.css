@@ -252,3 +252,19 @@ hr{
     margin-bottom: 2rem;
     width: 300px;
 }
+
+.sponsors{
+    text-align: center;
+    text-transform: uppercase;
+    color: #4a86c2;
+}
+
+.logos{
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
+.logoImg{
+    margin: auto;
+    width: fit-content;
+}
