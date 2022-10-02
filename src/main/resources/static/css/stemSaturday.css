@@ -114,6 +114,7 @@ hr{
 
 .donateTitle{
     margin: 0 0 1.5rem 0;
+    line-height: 3rem;
 }
 
 .basicPageContent::-webkit-scrollbar {
@@ -259,12 +260,30 @@ hr{
     color: #4a86c2;
 }
 
-.logos{
+.sponsorlogos{
     display: flex;
     align-items: center;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    width: 50%;
 }
-.logoImg{
+
+.logoImgA{
     margin: auto;
-    width: fit-content;
+    max-width: 150px;
 }
+
+.supporlogosA{
+    display: grid;
+    align-items: center;
+    margin: 2rem 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.logoImgB{
+    margin: auto;
+    max-width: 100px;
+}
+
+/*.center {*/
+/*    justify-content: center;*/
+/*}*/
