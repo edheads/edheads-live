@@ -263,7 +263,8 @@ hr{
 .sponsorlogos{
     display: flex;
     align-items: center;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    width: 50%;
 }
 
 .logoImgA{
@@ -283,6 +284,6 @@ hr{
     max-width: 100px;
 }
 
-.center {
-    justify-content: center;
-} 
+/*.center {*/
+/*    justify-content: center;*/
+/*}*/
