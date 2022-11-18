@@ -160,24 +160,24 @@ public class BasicsController {
     @RequestMapping("/sign-up")
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
-        return "/sign-up/signup_form";
+        return "sign-up/signup_form";
     }
 
     @RequestMapping("/career_signup")
     public String showCareerRegistrationForm(Model model) {
         model.addAttribute("user", new User());
-        return "/sign-up/career_signup";
+        return "sign-up/career_signup";
     }
 
     @RequestMapping("/teacher_signup")
     public String showTeacherRegistrationForm(Model model) {
         model.addAttribute("user", new User());
-        return "/sign-up/teacher_signup";
+        return "sign-up/teacher_signup";
     }
 
     @RequestMapping("/register_success")
     public String showSuccessfulRegistrationForm() {
-        return "/sign-up/register_success";
+        return "sign-up/register_success";
     }
 
     @PostMapping("/navigate_register")
