@@ -5,3 +5,41 @@
     line-height: 2rem;
     margin: 1.5rem 0;
 }
+
+.moreOpportunities {
+    /*border-top: 2px solid #d1a10e;*/
+    padding-top: 2rem;
+    /*margin-top: 1rem;*/
+}
+
+.textBoxButton {
+    background-color: #4a86c2;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: .05rem;
+    /*margin-top: 1.25rem;*/
+    padding: 1rem 1.5rem;
+    text-transform: capitalize;
+}
+
+.buttonContainerGetInvolved a{
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #4a86c2;
+    /*border: none;*/
+    /*border-radius: 0.5rem;*/
+    /*font-size: 1rem;*/
+    /*font-weight: 900;*/
+    /*letter-spacing: .05rem;*/
+    /*margin-top: 1.25rem;*/
+    /*padding: 1rem 1.5rem;*/
+}
+
+.buttonContainerGetInvolved {
+    display: flex;
+    justify-content: start;
+    padding-left: 3rem;
+    gap: 3rem;
+}
