@@ -100,6 +100,12 @@ public class BasicsController {
         return "simpleMachines";
     }
 
+    @RequestMapping("/crash-scene-investigation")
+    public String displayCrashSceneInvestigationGamePage() {
+
+        return "crashSceneInvestigation";
+    }
+
     @RequestMapping("/get-involved")
     public String displayGetInvolvedPage() {
 
