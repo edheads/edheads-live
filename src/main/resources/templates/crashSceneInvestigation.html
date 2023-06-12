@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  <meta charset="UTF-8">
+  <title>Edheads</title>
+  <link rel="icon" href="/assets/favicon.ico">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/basicPage.css">
+  <link rel="stylesheet" href="/css/singleGameView.css">
+
+
+  <script src="js/game.js" defer></script>
+  <script src="js/accordion.js" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '387795396444479');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=387795396444479&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+</head>
+<body>
+<div class="stickyHeader">
+  <header>
+    <div class="headerContents">
+      <div class="headerContents">
+        <div sec:authorize="!isAuthenticated()" class="topNav">
+          <ul class="mainNav">
+            <li class="topNavItem"><a href="/donate">Donate</a></li>
+            <li class="topNavItem"><a href="/login">Log In</a></li>
+            <li class="topNavItem"><a href="/sign-up">Sign Up</a></li>
+          </ul>
+        </div>
+        <div sec:authorize="isAuthenticated()" class="topNav">
+          <ul class="mainNav">
+            <li class="topNavItem"><a href="/donate">Donate</a></li>
+            <li sec:authorize="isAuthenticated()" class="topNavItem"><a href="/user">My Profile</a></li>
+            <li class="topNavItem">
+              <form name='logout' th:action="@{/logout}" method='post'>
+                <button class="topNavItem" type="submit">Log Out</button>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <div class="logo">
+          <img src="/assets/ed_logo.png" alt="Edheads logo" class="logoImg">
+        </div>
+
+        <div class=""> </div>
+
+        <div class="mainNavContainer">
+          <ul class="mainNav">
+            <li sec:authorize="isAuthenticated()" class="mainNavItem"><a href="/teachers">Teachers</a></li>
+            <li class="mainNavItem" style="margin-left: 1rem;"><a href="/welcome">Welcome</a></li>
+            <li class="mainNavItem"><a href="/about-us">About Us</a></li>
+            <li class="mainNavItem active"><a href="/our-games">Our Games</a></li>
+            <li class="mainNavItem"><a href="/more-fun-stuff">More Fun Stuff!</a></li>
+            <li class="mainNavItem"><a href="/get-involved">Get Involved</a></li>
+          </ul>
+          <div class="logoWG">
+            <img src="/assets/weatherhead.PNG" alt="Edheads Weathergirl Mascot" class="logoImgWG">
+          </div>
+        </div>
+      </div>
+  </header>
+</div>
+<main>
+
+
+  <section id="singleGameContainer">
+
+    <div class="singleGameContentContainer">
+      <div class="backNav"><a href="/our-games">Back to Games</a> </div>
+
+      <h1>Crash Scene Investigation</h1>
+
+      <div class="sponsorContainer">
+        <div class="sponsorContent">  <img src="/assets/honda-logo_color.png"
+                                           alt="" class="sponsorImg">
+          </a></div>
+      </div>
+
+      <div class="gameImageContainer">
+
+        <a href="http://edheads2.org/crash" onclick="return openwindow('http://edheads2.org/crash')">
+          <img src="/assets/crash_scenePlay.jpg" alt="Scene from the Crash Scene Investigation
+        game with play button." class="gameImg">
+        </a>
+        <div class="sponsorTag">
+          <a href="/get-involved"> Sponsor This Game!</a>
+        </div>
+      </div>
+
+      <div class="singleGameContent">
+        <p class="pHead">Grades: 10 - 12</p>
+        <p>Help the Highway Patrol reconstruct what occurred in a two car collision!
+        </p>
+      </div>
+
+
+
+
+
+      <div class="accordion">Glossary of Terms
+      </div>
+      <div class="accordionContent">
+        <p class="pHead">Actuator Arm</p>
+        <p class="pText">The section of a limit switch that is activated by something moving past it,
+          or coming in contact with it. The actuator opens or closes an electrical circuit,
+          indicating something is ‘true,’ like an engine block is present, or a lift
+          has reached the bottom of the shaft.
+        </p>
+
+        <p class="pHead">Bump Cap</p>
+        <p class="pText">A hat that looks a lot like a baseball cap, but it has a
+          hard plastic insert that protects the top of the wearer’s head. This is
+          safety equipment often worn in a manufacturing environment.
+        </p>
+
+        <p class="pHead"> Calibration</p>
+        <p class="pText">The process of determining if a machine’s readings are correct.
+        </p>
+
+        <p class="pHead">Certification</p>
+        <p class="pText">Demonstrating knowledge or skills that meet a certain standard.
+          Gaining certification usually involves taking some sort of written test or demonstrating
+          a skill that will then result in a certificate being awarded. Manufacturing technicians
+          have to become certified in a variety of areas that allow them to work knowledgeably
+          and safely on the manufacturing line.
+        </p>
+
+        <p class="pHead">Conduit</p>
+        <p class="pText">A tube or trough that protects electrical wiring.
+        </p>
+
+        <p class="pHead">Conveyor</p>
+        <p class="pText">Also known as conveyor belt. A band of fabric or metal that moves
+          parts or objects from one place to another.
+        </p>
+
+        <p class="pHead">Engineer</p>
+        <p class="pText">A person who designs, builds or maintains machinery.
+        </p>
+
+        <p class="pHead">Estimate</p>
+        <p class="pText">An approximate calculation or judgment about the number, size,
+          value, or scope of something.
+        </p>
+
+        <p class="pHead">Fuse</p>
+        <p class="pText">A safety device that melts and breaks an electric circuit if the
+          voltage exceeds a safe level.
+        </p>
+
+        <p class="pHead">Ladder Logic</p>
+        <p class="pText">A programming language that represents the various motors,
+          switches and robots on a manufacturing line in a graphical way.
+        </p>
+
+        <p class="pHead">Limit Switch</p>
+        <p class="pText">A switch operated by the motion of a part or the presence
+          of an object. They can turn power on or off if a particular situation is true. For example,
+          they can indicate if a part is in the right place for the robot arms to work on, or if the
+          part is in the right place to go up in the lift safely.
+        </p>
+
+        <p class="pHead">Line Operator</p>
+        <p class="pText">A person who runs the manufacturing line, performing
+          tasks that move products toward completion. Also known as a production operator.
+        </p>
+
+        <p class="pHead">Load Side</p>
+        <p class="pText">In a manufacturing context, this is the side of a
+          fuse that the power comes from, or the source side.
+        </p>
+
+        <p class="pHead">Lock Out, Tag Out</p>
+        <p class="pText">The process that occurs when the power is turned off,
+          and a technician locks the power box with a padlock marked with his or her initials.
+        </p>
+
+        <p class="pHead">Load Side</p>
+        <p class="pText">In a manufacturing context, this is the side of a
+          fuse that the power comes from, or the source side.
+        </p>
+
+        <p class="pHead">Multi-meter</p>
+        <p class="pText">A device used to measure the range of electric
+          current, voltage, and resistance.
+        </p>
+
+        <p class="pHead">Operator Error</p>
+        <p class="pText">When the cause of a problem or break
+          down is a result of the person operating the equipment, computer or device.
+        </p>
+
+        <p class="pHead">Quality Control</p>
+        <p class="pText">A system of maintaining standards
+          in manufactured products by testing a sample piece or the final product against desired specifications.
+        </p>
+
+        <p class="pHead">Technician</p>
+        <p class="pText">A skilled and/or trained person employed
+          to maintain and repair technical equipment or do practical work in a laboratory.
+        </p>
+
+        <p class="pHead">Timing of the Line</p>
+        <p class="pText">The amount of time each section or moving
+          part of the line takes to work. The timing of all the sections is set
+          very carefully, so that everything will work smoothly together.
+        </p>
+
+        <p class="pHead">Tolerance/Tolerances</p>
+        <p class="pText">Also known as degree of tolerance or range
+          of tolerance. Dimensions, properties, or conditions that may vary without
+          significantly affecting how a machine functions. Something outside a
+          specified range of tolerance will impact how well the machine will work,
+          sometimes shutting it down completely or causing it to produce unacceptable work.
+        </p>
+
+        <p class="pHead">Troubleshooting</p>
+        <p class="pTextLast">Trace, identify and correct problems with
+          machinery or systems.
+        </p>
+      </div>
+
+      <div class="accordion">Want to Know More About Manufacturing as a Career?
+      </div>
+      <div class="accordionContent">
+        <p>Play Edheads’Manufacturing Technician Game</p>
+        <p>Do an internet search for ‘tech camps,’ ‘manufacturing camps,’ or computer or robotics camps.
+          All of these provide skills used in manufacturing. In Columbus, Ohio,
+          check out TechCorps, which holds full-day, weeklong summer
+          “Techie Camps” where middle-school students are able to immerse
+          themselves in activities such as computer programming, and web and app
+          development. <a href="https:www.twenty.techcorps.org">twenty.techcorps.org</a>
+        </p>
+
+        <p>Talk to your teachers or guidance counselors about entering a technical
+          training course aimed at a manufacturing career, such as a Fab Lab course or Manufacturing Pathway.</p>
+
+        <p>After high school, pursue an associate degree in Manufacturing or Mechanical
+          Engineering Technology from local college institutions (In Ohio: Rhodes State,
+          Columbus State, Marion Technical, Edison Community, Sinclair Community and Clark State).</p>
+
+        <p>Ask about a work-study pilot program allows students the opportunity to work at
+          Honda or some other manufacturing plant three days a week, while taking classes
+          two days. You can build technical skills while earning your degree.
+          Honda is expanding their program in the future, and many other manufacturers have similar programs.</p>
+
+        <p>Ask about certification programs at local career skills centers.
+          Many of these centers now provide classes and certifications that allow you to
+          leave high school already employed.
+        </p>
+      </div>
+
+      <div class="accordion">Credits and Thanks
+      </div>
+      <div class="accordionContentTwoColumn">
+        <div class="accordionColumns">
+
+          <div class="columnLeftBasic">
+            <p class="pHead">Provided by</p>
+            <p class="pHead">Honda North America, Inc.</p>
+            <br>
+            <p class="pHead">Scot McLemore</p>
+            <p>Technical Workforce Development, HR and Admin Division
+              Thanks to Scot for being a great partner and a mind-expanding window into the
+              fascinating world of manufacturing!</p>
+            <br>
+            <p class="pHead">Partners</p>
+            <p class="accordionListTitle">Hilliard City Schools
+            <ul class="accordionList">
+              <li>Angela Griffin – Memorial Middle School</li>
+              <li>Lori Dhiraprasiddhi – Memorial Middle School</li>
+              <li>Kyleen Calabrese – Memorial Middle School</li>
+              <li>Doreen Miller – Memorial Middle School</li>
+            </ul>
+            </p>
+          </div>
+
+          <div class="columnRight">
+            <p class="pHead">Project Production and Development
+            </p>
+
+            <p class="accordionListTitle">Project Director: Gail Wheatley
+            <ul class="accordionList">
+              <li>Research</li>
+              <li>Script Writing</li>
+              <li>Activity Ideas & Concepts</li>
+            </ul>
+            </p>
+            <p class="accordionListTitle">Programming: Clearly Trained
+            </p>
+            <p class="accordionListTitle">Editing: Sarah Small
+            </p>
+
+            <br>  <br>
+            <hr>
+
+            <p class="footNote">
+              This activity is dedicated to Mary B. Wheatley, who taught a generation of students to love
+              singing, music, flowers, butterflies and hummingbirds. She inspired Edheads with her
+              endless enthusiasm and love of learning. Her best advice was, if you played a wrong note,
+              to learn what you could from it and then move on. You can’t go back and not play it.
+              We will forever miss the music, zest and beauty she brought to our lives.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sideBar">
+      <!--        <div class="sideBarText">Sidebar Text</div>-->
+      <div class="sideBarAd">
+        <script src="//ap.lijit.com/www/delivery/fpi.js?z=331605&width=300&height=250"></script>
+        <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+      </div>
+
+      <div class="sideBarAd">
+        <script src="//ap.lijit.com/www/delivery/fpi.js?z=596345&width=300&height=250"></script>
+        <!--            <img src="/assets/AdPlaceholder300x250.jpg" alt="" class="sideBarAd">-->
+      </div>
+
+      <div sec:authorize="isAuthenticated()" class="buttonContainer">
+        <a href="/welcome">View Teacher Resources</a>
+      </div>
+
+    </div>
+
+  </section>
+  <footer-component></footer-component>
+</main>
+</body>
+</html>
